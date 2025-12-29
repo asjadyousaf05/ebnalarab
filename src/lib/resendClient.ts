@@ -25,6 +25,10 @@ export const sendContactEmail = async ({ name, email, company, message }: Contac
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      name,
+      email,
+      company,
+      message,
       from: RESEND_FROM,
       to: RESEND_TO,
       subject,
