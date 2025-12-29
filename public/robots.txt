@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /assets/
+Disallow: /static/
+
+Sitemap: https://www.ebnalarab.com/sitemap.xml

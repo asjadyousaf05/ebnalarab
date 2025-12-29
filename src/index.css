@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.6);
+}
+
+/* Premium Industrial Components Design System */
+@layer base {
+  :root {
+    /* Core palette - Premium Industrial */
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Copper/Bronze accent for premium industrial feel */
+    --primary: 25 75% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Slate secondary */
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Warm accent */
+    --accent: 30 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 25 75% 47%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --copper: 25 75% 47%;
+    --copper-light: 30 70% 60%;
+    --copper-dark: 20 80% 35%;
+    --slate-dark: 220 25% 12%;
+    --slate-mid: 220 20% 25%;
+
+    /* Gradients */
+    --gradient-copper: linear-gradient(135deg, hsl(25 75% 47%), hsl(30 70% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 25% 12%), hsl(220 20% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 12% / 0.95), hsl(220 20% 8% / 0.9));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 97%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 20% 97%), hsl(220 15% 94%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(220 25% 10% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(220 25% 10% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(220 25% 10% / 0.18);
+    --shadow-copper: 0 8px 32px -8px hsl(25 75% 47% / 0.25);
+    --shadow-glow: 0 0 40px hsl(25 75% 47% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 10% 26%;
+    --sidebar-primary: 220 20% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 10% 95%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 25 75% 47%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 220 15% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 25 75% 55%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 15% 90%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 30 60% 55%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 25 75% 55%;
+
+    --copper: 25 75% 55%;
+    --copper-light: 30 70% 65%;
+    --copper-dark: 20 80% 40%;
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 220 10% 90%;
+    --sidebar-primary: 25 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 25 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-copper);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-md);
+  }
+
+  .premium-card {
+    @apply bg-card rounded-xl border border-border/40 overflow-hidden;
+    background-image: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .hero-overlay {
+    background-image: var(--gradient-hero);
+  }
+
+  .copper-glow {
+    box-shadow: var(--shadow-copper);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideRight 0.5s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .image-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 20%,
+      hsl(0 0% 100% / 0.1) 40%,
+      hsl(0 0% 100% / 0.2) 50%,
+      hsl(0 0% 100% / 0.1) 60%,
+      transparent 80%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .image-shine:hover::after {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

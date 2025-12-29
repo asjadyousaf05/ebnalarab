@@ -1,0 +1,200 @@
+          isDropdown: true,
+          categories: [
+            {
+              name: "كبائن محمولة",
+              href: "/services/porta-cabin",
+              subServices: [
+                { name: "منازل متنقلة", href: "/services/portable-houses" },
+                { name: "مكاتب مواقع متنقلة", href: "/services/portable-site-offices" },
+                { name: "معسكرات عمال متنقلة", href: "/services/portable-labor-camps" },
+                { name: "مساجد متنقلة", href: "/services/portable-mosques" },
+                { name: "تخزين متنقل", href: "/services/portable-storage" },
+                { name: "دورات مياه متنقلة", href: "/services/portable-restrooms" },
+                { name: "مستودع متنقل", href: "/services/portable-warehouse" },
+                { name: "كابين خشبي متنقل", href: "/services/portable-log-cabin" },
+                { name: "مقصف متنقل", href: "/services/portable-canteen" },
+                { name: "حاويات متنقلة", href: "/services/portable-mobile-containers" },
+                { name: "وحدات أمنية متنقلة", href: "/services/portable-security-units" },
+                { name: "مطبخ متنقل", href: "/services/portable-pantry" },
+                { name: "حمامات متنقلة", href: "/services/portable-bathrooms" },
+                { name: "مكاتب أمن متنقلة", href: "/services/portable-security-offices" },
+              ],
+            },
+            { name: "ألمنيوم", href: "/services/aluminum" },
+            { name: "لحام", href: "/services/welding" },
+            { name: "قص وثني", href: "/services/cutting-bending" },
+          ],
+        },
+        { name: "معرض الصور", href: "/gallery" },
+        { name: "تواصل", href: "/contact" },
+      ],
+    },
+    hero: {
+      slides: addSlideAlts([
+        {
+          id: "porta-cabins",
+          badge: "كبائن متنقلة موثوقة في السعودية",
+          headline: { before: "كبائن", highlight: "متنقلة", after: "جاهزة ومُعزولة" },
+          description:
+            "كبائن متنقلة للمكاتب والسكن والخدمات الصحية مع عزل حراري وتسليم سريع وتركيب بالرافعة حسب احتياج موقعك.",
+          features: ["ألواح عزل حراري", "تصاميم مخصصة وخدمات MEP", "تسليم وتركيب سريع"],
+          image: heroImage,
+          alt: "كبائن متنقلة من EBN AL ARAB جاهزة للتركيب في السعودية",
+          ctaHref: "/services/porta-cabin",
+        },
+        {
+          id: "security-cabins",
+          badge: "حماية المداخل",
+          headline: { before: "كبائن", highlight: "أمنية", after: "برؤية كاملة" },
+          description:
+            "كبائن حراسة برؤية 360° وهياكل معززة وخيار زجاج باليستي لتأمين البوابات ونقاط التفتيش.",
+          features: ["هياكل وأبواب معززة", "نوافذ بانورامية", "خيار زجاج باليستي"],
+          image: bearingsImage,
+          alt: "كابينة أمنية بنوافذ بانورامية عند بوابة موقع",
+          ctaHref: "/services/portable-security-units",
+        },
+        {
+          id: "portable-warehouse",
+          badge: "تخزين متنقل",
+          headline: { before: "مستودعات", highlight: "متنقلة", after: "جاهزة للتخزين" },
+          description:
+            "مستودعات متنقلة للمعدات والمخزون مع تهوية وإنارة وأبواب آمنة وبمقاسات مخصصة.",
+          features: ["تهوية وإنارة", "أبواب آمنة", "مقاسات مخصصة للمخزون"],
+          image: valvesImage,
+          alt: "مستودع متنقل جاهز لتخزين المواد",
+          ctaHref: "/services/portable-warehouse",
+        },
+        {
+          id: "welding",
+          badge: "تصنيع ولحام معتمد",
+          headline: { before: "لحام", highlight: "دقيق", after: "للفولاذ والألمنيوم" },
+          description:
+            "خدمات لحام وتصنيع هياكل وسلالم وإكسسوارات تدعم كبائنك بجودة معتمدة.",
+          features: ["فنيون معتمدون", "تصنيع إنشائي", "قدرات فولاذ وألمنيوم"],
+          image: fastenersImage,
+          alt: "فني لحام يعمل على إطار فولاذي",
+          ctaHref: "/services/welding",
+        },
+      ]),
+      ctaPrimary: "تصفح الكبائن",
+      ctaSecondary: "شاهد زمن التركيب",
+    },
+    stats: [
+      { value: "20+", label: "سنة في بناء الكبائن" },
+      { value: "1,200+", label: "كابينة تم تسليمها" },
+      { value: "15+", label: "قطاعات نخدمها" },
+      { value: "48 ساعة", label: "أسرع تركيب" },
+    ],
+    products: {
+      eyebrow: "كبائننا",
+      title: "حلول كبائن معيارية",
+      description: "اكتشف حلول كبائن جاهزة للمكاتب والأمن والإقامة والوحدات الصحية.",
+      viewAll: "عرض كل الكبائن",
+      categories: addCategoryAlts([
+        {
+          id: 1,
+          name: "كبائن محمولة",
+          description: "كبائن معزولة للمكاتب والسكن والأمن والوحدات الصحية",
+          image: heroImage,
+          imageAlt: "صف كبائن محمولة معزولة جاهزة للنقل",
+          count: "14 خدمة فرعية",
+          href: "/services/porta-cabin",
+        },
+        {
+          id: 2,
+          name: "ألمنيوم",
+          description: "تصنيع ألمنيوم خفيف ومقاوم للتآكل",
+          image: gearsImage,
+          imageAlt: "ألواح وأعمدة ألمنيوم في ورشة",
+          count: "تصنيع",
+          href: "/services/aluminum",
+        },
+        {
+          id: 3,
+          name: "لحام",
+          description: "لحام معتمد للأعمال الإنشائية والصناعية",
+          image: fastenersImage,
+          imageAlt: "فني لحام يعمل على إطار فولاذي",
+          count: "معتمد",
+          href: "/services/welding",
+        },
+        {
+          id: 4,
+          name: "قص وثني",
+          description: "قص CNC وثني بدقة عالية",
+          image: valvesImage,
+          imageAlt: "ماكينة ثني هيدروليكية تعمل على صاج معدني",
+          count: "دقة",
+          href: "/services/cutting-bending",
+        },
+      ]),
+    },
+    features: {
+      eyebrow: "لماذا نحن",
+      title: "كبائن متنقلة بالجودة الصحيحة",
+      description: "مصممة لحرارة المناخ، تركيب سريع، وتحمل الاستخدام اليومي في أي موقع.",
+      items: [
+        { icon: "Shield", title: "عزل ومتانة", description: "ألواح ساندوتش وهياكل فولاذية لراحة حرارية وعمر أطول." },
+        { icon: "Truck", title: "تسليم سريع", description: "تسليم وتركيب سريع لتشغيل موقعك بلا تأخير." },
+        { icon: "Award", title: "جودة معتمدة", description: "تصنيع وفق ضبط جودة صارم مع تقارير فحص وتحمل." },
+        { icon: "Headphones", title: "دعم متكامل", description: "من تصميم المخطط إلى تنسيق الخدمات والصيانة اللاحقة." },
+        { icon: "Wrench", title: "تصاميم مخصصة", description: "مقاسات، تقسيمات، تشطيبات وخدمات حسب طلبك." },
+        { icon: "Globe", title: "خبرة إقليمية", description: "سجل نجاح عبر مناخ ولوائح الخليج." },
+      ],
+    },
+    testimonials: {
+      eyebrow: "آراء العملاء",
+      title: "موثوق من فرق المواقع",
+      description: "اعرف لماذا يعتمد المقاولون ومديرو المرافق على كبائننا للتركيب السريع والموثوق.",
+      items: [
+        {
+          id: 1,
+          name: "عمر رحمن",
+          role: "مدير مشروع",
+          company: "الأنوار للمقاولات",
+          content:
+            "وصلت مكاتب الموقع معزولة ومجهزة بالكهرباء بالكامل. بدأنا العمل خلال يومين دون أي إعادة عمل.",
+          rating: 5,
+        },
+        {
+          id: 2,
+          name: "فاطمة الحسن",
+          role: "مسؤولة مرافق",
+          company: "خليج لوجستيك",
+          content:
+            "كبائن الأمن متينة ومهوّاة وتشطيباتها نظيفة. الفريق أدار الرفع والإنزال بسلاسة.",
+          rating: 5,
+        },
+        {
+          id: 3,
+          name: "جيمس باتيل",
+          role: "مدير عمليات",
+          company: "مترو للتطوير",
+          content:
+            "احتجنا وحدات صحية بسرعة. تم التسليم في الوقت مع جاهزية التوصيلات وتشطيبات سهلة التنظيف.",
+          rating: 5,
+        },
+      ],
+    },
+    faq: {
+      eyebrow: "الأسئلة الشائعة",
+      title: "أسئلة حول الكبائن",
+      description: "إجابات عن التسليم والتخصيص والتركيب.",
+      items: [
+        {
+          question: "ما أسرع وقت للتسليم؟",
+          answer:
+            "يمكن تسليم الوحدات القياسية خلال 2–5 أيام حسب المخزون وجدولة النقل. التصاميم المخصصة قد تحتاج وقتًا إضافيًا.",
+        },
+        {
+          question: "هل تتولون التركيب في الموقع؟",
+          answer:
+            "نعم، ندير عملية التنزيل والرفع والتثبيت والتسوية. ويمكننا التوصيل بالخدمات المتاحة إذا كان الوصول متاحًا.",
+        },
+        {
+          question: "هل يمكن تخصيص المخطط والتشطيبات؟",
+          answer:
+            "بالتأكيد. نخصص التقسيمات والأبواب والنوافذ والأرضيات والتكييف والكهرباء والسباكة حسب متطلباتك.",
+        },
+        {
+          question: "وماذا عن التصاريح؟",
