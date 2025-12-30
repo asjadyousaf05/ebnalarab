@@ -3,6 +3,7 @@ import { Shield, Truck, Award, Wrench, Headphones, Globe } from "lucide-react";
 import { useLocale } from "@/context/LocaleContext";
 import { copy } from "@/i18n/copy";
 import { Seo } from "@/lib/seo";
+import { pageMeta } from "@/i18n/pageMeta";
 import { useLocation } from "react-router-dom";
 
 const iconMap = { Shield, Truck, Award, Wrench, Headphones, Globe };
@@ -12,14 +13,15 @@ const About = () => {
   const t = copy[locale];
   const about = t.about;
   const location = useLocation();
+  const meta = pageMeta[locale] ?? pageMeta.en;
 
   const features = t.features.items;
 
   return (
     <div dir={dir}>
       <Seo
-        title={about.metaTitle}
-        description={about.metaDescription}
+        title={meta.about.title}
+        description={meta.about.description}
         path={location.pathname}
         lang={locale}
         breadcrumbs={[{ name: t.navbar.home, url: "https://www.ebnalarab.com/" }, { name: about.title, url: `https://www.ebnalarab.com${location.pathname}` }]}

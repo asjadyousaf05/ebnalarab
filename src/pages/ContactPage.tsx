@@ -2,18 +2,20 @@ import { Contact } from "@/components/Contact";
 import { useLocale } from "@/context/LocaleContext";
 import { copy } from "@/i18n/copy";
 import { Seo } from "@/lib/seo";
+import { pageMeta } from "@/i18n/pageMeta";
 import { useLocation } from "react-router-dom";
 
 const ContactPage = () => {
   const { locale, dir } = useLocale();
   const t = copy[locale];
   const location = useLocation();
+  const meta = pageMeta[locale] ?? pageMeta.en;
 
   return (
     <div dir={dir}>
       <Seo
-        title={`${t.contact.title} | ${t.navbar.brand}`}
-        description={t.contact.description}
+        title={meta.contact.title}
+        description={meta.contact.description}
         path={location.pathname}
         lang={locale}
         breadcrumbs={[{ name: t.navbar.home, url: "https://www.ebnalarab.com/" }, { name: t.contact.title, url: `https://www.ebnalarab.com${location.pathname}` }]}

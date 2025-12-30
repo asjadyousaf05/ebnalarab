@@ -6,6 +6,7 @@ import { useLocale } from "@/context/LocaleContext";
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Seo } from "@/lib/seo";
+import { pageMeta } from "@/i18n/pageMeta";
 import { useLocation } from "react-router-dom";
 
 const ServicesIndex = () => {
@@ -13,8 +14,8 @@ const ServicesIndex = () => {
   const t = copy[locale];
   const services = t.services.filter((s) => !s.parent);
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
-  const parentNames = services.map((s) => s.name).join(", ");
   const location = useLocation();
+  const meta = pageMeta[locale] ?? pageMeta.en;
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -23,8 +24,8 @@ const ServicesIndex = () => {
   return (
     <section className="section-padding bg-background" aria-labelledby="services-heading" dir={dir}>
       <Seo
-        title={`${t.servicesIntro.title} | ${t.navbar.brand}${t.navbar.brandHighlight ? " " + t.navbar.brandHighlight : ""}`}
-        description={`${t.servicesIntro.title} - ${t.servicesIntro.description}`}
+        title={meta.services.title}
+        description={meta.services.description}
         path={location.pathname}
         lang={locale}
         breadcrumbs={[{ name: t.navbar.home, url: "https://www.ebnalarab.com/" }, { name: t.servicesIntro.title, url: `https://www.ebnalarab.com${location.pathname}` }]}

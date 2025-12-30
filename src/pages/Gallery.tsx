@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { copy } from "@/i18n/copy";
 import { useLocale } from "@/context/LocaleContext";
 import { Seo } from "@/lib/seo";
+import { pageMeta } from "@/i18n/pageMeta";
 import { useLocation } from "react-router-dom";
 
 const Gallery = () => {
@@ -11,6 +12,7 @@ const Gallery = () => {
   const items = [...t.products.categories, ...t.services.filter((s) => s.gallery?.length)].slice(0, 18);
   const [selected, setSelected] = useState<{ src: string; alt: string; title: string } | null>(null);
   const location = useLocation();
+  const meta = pageMeta[locale] ?? pageMeta.en;
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -23,8 +25,8 @@ const Gallery = () => {
   return (
     <section className="section-padding bg-background" aria-labelledby="gallery-heading" dir={dir}>
       <Seo
-        title={`${t.products.title} | ${t.navbar.brand}${t.navbar.brandHighlight ? " " + t.navbar.brandHighlight : ""}`}
-        description={t.products.description}
+        title={meta.gallery.title}
+        description={meta.gallery.description}
         path={location.pathname}
         lang={locale}
         breadcrumbs={[{ name: t.navbar.home, url: "https://www.ebnalarab.com/" }, { name: t.products.title, url: `https://www.ebnalarab.com${location.pathname}` }]}

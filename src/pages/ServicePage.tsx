@@ -7,12 +7,14 @@ import { useLocale } from "@/context/LocaleContext";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { trackContactClick } from "@/lib/analytics";
 import { Seo } from "@/lib/seo";
+import { pageMeta } from "@/i18n/pageMeta";
 
 const ServicePage = () => {
   const { locale, dir } = useLocale();
   const location = useLocation();
   const { slug } = useParams();
   const t = copy[locale];
+  const meta = pageMeta[locale] ?? pageMeta.en;
   const services = t.services;
   const service = useMemo(() => services.find((s) => s.slug === slug), [slug, services]);
   const children = useMemo(
@@ -29,6 +31,7 @@ const ServicePage = () => {
   }, [slug]);
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const serviceMeta = service ? meta.serviceDetails[service.slug] : undefined;
 
   if (!service) {
     return (
@@ -50,8 +53,11 @@ const ServicePage = () => {
   return (
     <div dir={dir}>
       <Seo
-        title={`${service.name} | ${t.navbar.brand}${t.navbar.brandHighlight ? " " + t.navbar.brandHighlight : ""}`}
-        description={`${service.name}: ${service.intro} ${service.description}`}
+        title={
+          serviceMeta?.title ??
+          `${service.name} | ${t.navbar.brand}${t.navbar.brandHighlight ? " " + t.navbar.brandHighlight : ""}`
+        }
+        description={serviceMeta?.description ?? `${service.name}: ${service.intro} ${service.description}`}
         path={location.pathname}
         lang={locale}
         ogImage={service.gallery?.[0]}
