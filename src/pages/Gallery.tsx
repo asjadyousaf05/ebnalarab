@@ -9,7 +9,8 @@ import { useLocation } from "react-router-dom";
 const Gallery = () => {
   const { locale, dir } = useLocale();
   const t = copy[locale];
-  const items = [...t.products.categories, ...t.services.filter((s) => s.gallery?.length)].slice(0, 18);
+  const extraItems = t.galleryExtras ?? [];
+  const items = [...extraItems, ...t.products.categories, ...t.services.filter((s) => s.gallery?.length)].slice(0, 24);
   const [selected, setSelected] = useState<{ src: string; alt: string; title: string } | null>(null);
   const location = useLocation();
   const meta = pageMeta[locale] ?? pageMeta.en;

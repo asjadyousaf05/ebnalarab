@@ -7,6 +7,12 @@ import portacabin6 from "@/assets/portacabin6.webp";
 import portacabin7 from "@/assets/portacabin7.webp";
 import portacabin8 from "@/assets/portacabin8.webp";
 import portacabin9 from "@/assets/portacabin9.webp";
+import portacabin10 from "@/assets/portacabin10.webp";
+import portacabin11 from "@/assets/portacabin11.webp";
+import portacabin12 from "@/assets/portacabin12.webp";
+import portacabin13 from "@/assets/portacabin13.webp";
+import portacabin14 from "@/assets/portacabin14.webp";
+import portacabin15 from "@/assets/portacabin15.webp";
 import aluminium from "@/assets/aluminium.webp";
 import welding from "@/assets/welding.webp";
 import cuttingBending from "@/assets/cuttingBending.webp";
@@ -55,6 +61,12 @@ const imageAltMap: Record<string, string> = {
   [portacabin7]: "Security cabin with large windows and reinforced door at a site entrance",
   [portacabin8]: "Portable restroom cabin with ventilation and service access panel",
   [portacabin9]: "Portable warehouse cabin with large roller door for equipment storage",
+  [portacabin10]: "Modern porta cabin exterior with large glazing and split-unit AC installed",
+  [portacabin11]: "Double-entrance modular cabin set up as a portable office or classroom",
+  [portacabin12]: "Compact guard cabin with wraparound windows for visibility",
+  [portacabin13]: "Stackable portable cabins prepared on steel foundations for deployment",
+  [portacabin14]: "Blue-accent modular cabin elevated on concrete blocks at a job site",
+  [portacabin15]: "Kiosk-style portable cabin with sliding service window and steps",
   [aluminium]: "Aluminum profiles and panels stacked in a workshop",
   [welding]: "Welder working on a steel frame with bright sparks",
   [cuttingBending]: "CNC press brake bending metal sheet in a factory",
@@ -63,6 +75,27 @@ const imageAltMap: Record<string, string> = {
 };
 
 const getImageAlt = (image: string, fallback: string) => imageAltMap[image] ?? fallback;
+
+const extraCabinImages = [portacabin10, portacabin11, portacabin12, portacabin13, portacabin14, portacabin15];
+
+const hashString = (value: string) =>
+  value.split("").reduce((acc, char, idx) => acc + char.charCodeAt(0) * (idx + 1), 0);
+
+const pickExtraCabinImages = (slug: string) => {
+  const hash = hashString(slug || "default");
+  const firstIdx = hash % extraCabinImages.length;
+  const secondIdxRaw = (hash >> 3) % extraCabinImages.length;
+  const secondIdx = firstIdx === secondIdxRaw ? (secondIdxRaw + 1) % extraCabinImages.length : secondIdxRaw;
+
+  return [extraCabinImages[firstIdx], extraCabinImages[secondIdx]];
+};
+
+const extraCabinGalleryItems = extraCabinImages.map((img, idx) => ({
+  name: `Porta Cabin Variant ${idx + 10}`,
+  description: "Custom porta cabin deployments and configurations.",
+  gallery: [img],
+  galleryAlts: [getImageAlt(img, `Porta cabin variant ${idx + 10} by ${BRAND_NAME}`)],
+}));
 
 const addSlideAlts = (slides: Slide[]) =>
   slides.map((slide) => ({
@@ -81,14 +114,27 @@ const addCategoryAlts = <
   }));
 
 const addGalleryAlts = (services: Service[]) =>
-  services.map((service) => ({
-    ...service,
-    heroAlt: service.heroAlt ?? getImageAlt(service.gallery[0], `${service.name} hero by ${BRAND_NAME} in Saudi Arabia`),
-    cardAlt: service.cardAlt ?? getImageAlt(service.gallery[0], `${service.name} by ${BRAND_NAME} in Saudi Arabia`),
-    galleryAlts:
-      service.galleryAlts ??
-      service.gallery.map((img, idx) => getImageAlt(img, `${service.name} by ${BRAND_NAME} - image ${idx + 1}`)),
-  }));
+  services.map((service) => {
+    const extras = pickExtraCabinImages(service.slug);
+    const galleryWithExtras = [...service.gallery, ...extras];
+    const hasFullAlts = service.galleryAlts?.length && service.galleryAlts.length >= service.gallery.length;
+    const galleryAlts = hasFullAlts
+      ? [
+          ...service.galleryAlts,
+          ...extras.map((img, idx) =>
+            getImageAlt(img, `${service.name} by ${BRAND_NAME} - image ${service.gallery.length + idx + 1}`)
+          ),
+        ]
+      : galleryWithExtras.map((img, idx) => getImageAlt(img, `${service.name} by ${BRAND_NAME} - image ${idx + 1}`));
+
+    return {
+      ...service,
+      gallery: galleryWithExtras,
+      heroAlt: service.heroAlt ?? getImageAlt(galleryWithExtras[0], `${service.name} hero by ${BRAND_NAME} in Saudi Arabia`),
+      cardAlt: service.cardAlt ?? getImageAlt(galleryWithExtras[0], `${service.name} by ${BRAND_NAME} in Saudi Arabia`),
+      galleryAlts,
+    };
+  });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const copy: Record<Locale, any> = {
@@ -490,6 +536,7 @@ labels: {
       back: "Back to services",
       view: "View service",
     },
+    galleryExtras: extraCabinGalleryItems,
     services: addGalleryAlts([
       {
         slug: "porta-cabin",
@@ -1159,6 +1206,7 @@ labels: {
       back: "عودة للخدمات",
       view: "عرض الخدمة",
     },
+    galleryExtras: extraCabinGalleryItems,
     services: addGalleryAlts([
       {
         slug: "porta-cabin",
