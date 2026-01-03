@@ -5,12 +5,14 @@ import { useLocale } from "@/context/LocaleContext";
 import { Seo } from "@/lib/seo";
 import { pageMeta } from "@/i18n/pageMeta";
 import { useLocation } from "react-router-dom";
+import { servicesContent } from "@/i18n/servicesContent";
 
 const Gallery = () => {
   const { locale, dir } = useLocale();
   const t = copy[locale];
   const extraItems = t.galleryExtras ?? [];
-  const items = [...extraItems, ...t.products.categories, ...t.services.filter((s) => s.gallery?.length)].slice(0, 24);
+  const serviceItems = servicesContent[locale].filter((s) => s.gallery?.length);
+  const items = [...extraItems, ...t.products.categories, ...serviceItems].slice(0, 30);
   const [selected, setSelected] = useState<{ src: string; alt: string; title: string } | null>(null);
   const location = useLocation();
   const meta = pageMeta[locale] ?? pageMeta.en;

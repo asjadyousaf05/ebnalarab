@@ -8,6 +8,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { trackContactClick } from "@/lib/analytics";
 import { Seo } from "@/lib/seo";
 import { pageMeta } from "@/i18n/pageMeta";
+import { servicesContent } from "@/i18n/servicesContent";
 
 const ServicePage = () => {
   const { locale, dir } = useLocale();
@@ -15,7 +16,9 @@ const ServicePage = () => {
   const { slug } = useParams();
   const t = copy[locale];
   const meta = pageMeta[locale] ?? pageMeta.en;
-  const services = t.services;
+  const services = servicesContent[locale];
+  const altLocale: "en" | "ar" = locale === "en" ? "ar" : "en";
+  const altServices = servicesContent[altLocale];
   const service = useMemo(() => services.find((s) => s.slug === slug), [slug, services]);
   const children = useMemo(
     () => (service ? services.filter((s) => s.parent === service.slug) : []),
@@ -25,13 +28,67 @@ const ServicePage = () => {
     () => (service?.parent ? services.find((s) => s.slug === service.parent) : undefined),
     [service, services]
   );
+  const relatedServices = useMemo(
+    () =>
+      service?.relatedSlugs
+        ?.map((rel) => services.find((s) => s.slug === rel))
+        .filter(Boolean) ?? [],
+    [service, services]
+  );
+  const altService = useMemo(
+    () => altServices.find((s) => s.slug === slug),
+    [altServices, slug]
+  );
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [slug]);
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
-  const serviceMeta = service ? meta.serviceDetails[service.slug] : undefined;
+  const serviceMeta =
+    service?.metaTitle && service?.metaDescription
+      ? { title: service.metaTitle, description: service.metaDescription }
+      : service
+        ? meta.serviceDetails[service.slug]
+        : undefined;
+
+  useEffect(() => {
+    if (!service) return;
+    const faqEntities = [
+      ...(service.faqs || []).map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        inLanguage: locale === "ar" ? "ar" : "en",
+      })),
+      ...(altService?.faqs || []).map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        inLanguage: altLocale === "ar" ? "ar" : "en",
+      })),
+    ];
+
+    if (!faqEntities.length) return;
+
+    const scriptId = `faq-schema-${service.slug}`;
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "application/ld+json";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqEntities,
+    });
+
+    return () => {
+      script?.remove();
+    };
+  }, [service, altService, locale, altLocale]);
 
   if (!service) {
     return (
@@ -158,6 +215,74 @@ const ServicePage = () => {
             >
               <Phone className="w-5 h-5" /> {t.servicesIntro.whatsappLabel}
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom grid lg:grid-cols-3 gap-10">
+          <div className="lg:col-span-2 space-y-6">
+            {service.contentSections?.map((section) => (
+              <div
+                key={section.heading}
+                className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-3"
+              >
+                <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
+                {section.body.map((paragraph, idx) => (
+                  <p
+                    key={idx}
+                    className="text-muted-foreground leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-6">
+            <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                {locale === "ar" ? "روابط ذات صلة" : "Related services"}
+              </h3>
+              <div className="space-y-2">
+                {relatedServices.map((rel) => (
+                  <Link
+                    key={rel?.slug}
+                    to={`/services/${rel?.slug}`}
+                    className="flex items-center justify-between gap-2 rounded-lg border border-border/60 bg-background/80 px-3 py-2 hover:border-primary/50 transition"
+                  >
+                    <span className="text-foreground font-medium">{rel?.name}</span>
+                    <ArrowRight className="w-4 h-4 text-primary" />
+                  </Link>
+                ))}
+              </div>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+              >
+                {t.servicesIntro.back} <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                {locale === "ar" ? "الأسئلة الشائعة" : "FAQs"}
+              </h3>
+              <div className="space-y-2">
+                {service.faqs.map((faq) => (
+                  <details
+                    key={faq.question}
+                    className="group rounded-lg border border-border/60 bg-background/70 p-3"
+                  >
+                    <summary className="flex items-center justify-between gap-2 cursor-pointer text-foreground font-semibold">
+                      {faq.question}
+                      <ArrowRight className="w-4 h-4 text-primary transition-transform group-open:rotate-90" />
+                    </summary>
+                    <p className="text-muted-foreground mt-2 leading-relaxed">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

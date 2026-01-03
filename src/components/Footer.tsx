@@ -1,11 +1,13 @@
 import { Linkedin, Twitter, Facebook, Instagram, ArrowUp } from "lucide-react";
 import { copy } from "@/i18n/copy";
 import { useLocale } from "@/context/LocaleContext";
+import { servicesContent } from "@/i18n/servicesContent";
 
 export const Footer = () => {
   const { locale, dir } = useLocale();
   const t = copy[locale].footer;
   const labels = copy[locale].labels;
+  const serviceLinks = servicesContent[locale];
   const socialLinks = [
     { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/ebn-al-arab-3a72b23a1" },
     { name: "Twitter", icon: Twitter, href: "#" },
@@ -25,7 +27,7 @@ export const Footer = () => {
     <footer className="bg-slate-dark text-primary-foreground" role="contentinfo" dir={dir}>
       {/* Main Footer */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-6">
@@ -56,6 +58,24 @@ export const Footer = () => {
                   }
                 >
                   <social.icon className="w-5 h-5 text-primary-foreground/70" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Portacabins & Services */}
+          <div className="lg:col-span-2">
+            <h3 className="font-semibold text-primary-foreground mb-4">
+              {locale === "ar" ? "كبائن وحلول محمولة" : "Portacabins & Portable Solutions"}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {serviceLinks.map((link) => (
+                <a
+                  key={link.slug}
+                  href={`/services/${link.slug}`}
+                  className="text-primary-foreground/60 hover:text-primary transition-colors duration-200"
+                >
+                  {link.name}
                 </a>
               ))}
             </div>

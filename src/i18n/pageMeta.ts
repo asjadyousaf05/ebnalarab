@@ -1,4 +1,5 @@
 import { Locale } from "@/context/LocaleContext";
+import { servicesContent } from "./servicesContent";
 
 type MetaEntry = { title: string; description: string };
 
@@ -11,143 +12,70 @@ type PageMeta = {
   serviceDetails: Record<string, MetaEntry>;
 };
 
+const buildServiceMeta = (locale: Locale): Record<string, MetaEntry> =>
+  servicesContent[locale].reduce(
+    (acc, service) => ({
+      ...acc,
+      [service.slug]: { title: service.metaTitle, description: service.metaDescription },
+    }),
+    {}
+  );
+
 export const pageMeta: Record<Locale, PageMeta> = {
   en: {
     home: {
-      title: "Ebn Al Arab Portable Cabins & Modular Buildings Saudi",
+      title: "Ebn Al Arab Porta Cabins & Modular Buildings Saudi Arabia",
       description:
-        "Portable cabins, modular buildings, and prefab offices across Saudi Arabia. Trusted supplier in Jeddah for B2B, government, and industrial projects.",
+        "Portable cabins, porta cabins, prefab offices, and modular compounds built in Saudi Arabia with fast delivery for government, industrial, and commercial projects.",
     },
     about: {
-      title: "About Ebn Al Arab | Prefab & Portable Buildings Saudi",
+      title: "About Ebn Al Arab | Porta Cabins & Prefab Buildings Saudi",
       description:
-        "Saudi manufacturer of portable cabins, prefab buildings, and modular solutions delivering fast projects for government, contractors, and industry.",
+        "Saudi manufacturer of porta cabins, prefab buildings, and modular solutions delivering fast, compliant projects for contractors, government, and industry.",
     },
     services: {
-      title: "Modular & Portable Building Services KSA | Ebn Al Arab",
+      title: "Portable Cabins & Porta Cabin Solutions Saudi Arabia | Ebn Al Arab",
       description:
-        "Complete portable cabins, prefab offices, labor camps, mosques, toilets, warehouses, and storage units for Saudi projects with turnkey delivery.",
+        "Porta cabins, site offices, labor camps, restrooms, kitchens, warehouses, and security cabins built in Saudi Arabia with fast delivery and bilingual support.",
     },
     gallery: {
       title: "Project Gallery | Portable Cabins & Prefab Buildings KSA",
       description:
-        "View completed portable cabins, prefab buildings, and modular projects across Saudi Arabia, including Jeddah industrial zones and oil & gas sites.",
+        "View completed portable cabins, prefab buildings, and modular projects across Saudi Arabia, including Jeddah, Riyadh, NEOM, and oil & gas sites.",
     },
     contact: {
-      title: "Contact Ebn Al Arab | Portable Cabins & Modular Saudi",
+      title: "Contact Ebn Al Arab | Porta Cabins & Modular Buildings KSA",
       description:
-        "Request a quote for portable cabins, prefab offices, or labor camps in Saudi Arabia. Serving Jeddah, Riyadh, Dammam, and government projects.",
+        "Request a quote for porta cabins, site offices, labor camps, or warehouses in Saudi Arabia. Serving Jeddah, Riyadh, Dammam, NEOM, and remote sites.",
     },
-    serviceDetails: {
-      "porta-cabin": {
-        title: "Portable Cabins Saudi Arabia | Fast Delivery by Ebn Al Arab",
-        description:
-          "Durable portable cabins in Saudi Arabia for sites, offices, and housing. Built for heat, quick to deploy, compliant with Saudi standards.",
-      },
-      "portable-site-offices": {
-        title: "Portable Site Offices KSA | Ready Modular Offices",
-        description:
-          "Secure, air-conditioned portable offices for Saudi sites and projects. Custom layouts, smart storage, and rapid installation in Jeddah and nationwide.",
-      },
-      "portable-labor-camps": {
-        title: "Portable Labor Camps Saudi Arabia | Turnkey Housing",
-        description:
-          "Turnkey portable labor camps with sleeping, dining, hygiene blocks, and HVAC. Built for remote Saudi projects and industrial zones.",
-      },
-      "portable-mosques": {
-        title: "Portable Mosques KSA | Ready Prayer Units for Sites",
-        description:
-          "Portable mosques and prayer units for Saudi sites with ablution areas, AC, and compliant layouts. Fast deployment for contractors.",
-      },
-      "portable-restrooms": {
-        title: "Portable Toilets Saudi Arabia | Hygienic Site Solutions",
-        description:
-          "Hygienic portable toilets and shower units for Saudi job sites and events. Easy maintenance, fast setup, and odor control.",
-      },
-      "portable-warehouse": {
-        title: "Portable Warehouses Saudi Arabia | Secure Storage Units",
-        description:
-          "Modular storage and portable warehouses for Saudi logistics, industrial zones, and oil & gas sites. Secure, expandable, and fast to install.",
-      },
-      "portable-security-units": {
-        title: "Portable Security Cabins KSA | Guard Rooms & Checkpoints",
-        description:
-          "Guard cabins and checkpoints built for Saudi sites with ballistic options, AC, and clear visibility. Rapid delivery across Jeddah and KSA.",
-      },
-      "portable-canteen": {
-        title: "Portable Kitchens KSA | Canteen Units for Camps & Sites",
-        description:
-          "Fully equipped portable kitchens and canteens for labor camps and remote sites in Saudi Arabia. Ventilation, hygiene, and fast setup.",
-      },
-    },
+    serviceDetails: buildServiceMeta("en"),
   },
   ar: {
     home: {
-      title: "إبن العرب | كبائن وحلول مبانٍ مسبقة الصنع في السعودية",
+      title: "ابن العرب | كبائن برتا ومباني جاهزة في السعودية",
       description:
-        "كبائن متنقلة ومبانٍ مسبقة الصنع في السعودية مع فريق إبن العرب. مورد موثوق بجدة للمشاريع الحكومية والصناعية ومقاولي القطاع الخاص.",
+        "كبائن جاهزة ومكاتب ومعسكرات عمال ومرافق صحية وتصنيع معدني معزول بتسليم سريع في جدة والرياض والدمام ونيوم.",
     },
     about: {
-      title: "من نحن | إبن العرب للمباني المسبقة والكبائن المتنقلة",
+      title: "من نحن | ابن العرب للكرفانات والمباني المسبقة الصنع",
       description:
-        "شركة سعودية لصناعة الكبائن المتنقلة والمباني الجاهزة، خبرة في تسليم المشاريع السريعة للجهات الحكومية والمقاولين والقطاع الصناعي.",
+        "مصنّع سعودي للكرفانات والمباني المسبقة الصنع يقدم كبائن برتا ومكاتب وسكن ومعسكرات عمال بجودة موثقة وتسليم سريع.",
     },
     services: {
-      title: "خدمات الكبائن والمباني المسبقة في السعودية | إبن العرب",
+      title: "حلول كبائن برتا والمباني الجاهزة في السعودية | ابن العرب",
       description:
-        "حلول متكاملة للكبائن الجاهزة، المكاتب المتنقلة، معسكرات العمال، المساجد، دورات المياه، والمستودعات مع تسليم جاهز للمشاريع السعودية.",
+        "كبائن برتا ومكاتب ومعسكرات عمال ومطابخ ومستودعات وأمن بتركيب سريع ودعم ثنائي اللغة لخدمة مشاريع المملكة.",
     },
     gallery: {
-      title: "معرض المشاريع | كبائن ومبانٍ جاهزة في السعودية",
+      title: "معرض المشاريع | كبائن جاهزة ومباني مسبقة الصنع",
       description:
-        "شاهد نماذج مشاريع الكبائن والمباني المسبقة في السعودية، بما في ذلك المناطق الصناعية بجدة ومواقع النفط والغاز.",
+        "اطلع على مشاريع الكبائن والمباني الجاهزة في السعودية بما فيها جدة والرياض ونيوم ومواقع النفط والغاز.",
     },
     contact: {
-      title: "تواصل معنا | إبن العرب للكبائن والمباني المسبقة في السعودية",
+      title: "تواصل معنا | ابن العرب للكرفانات والمباني الجاهزة",
       description:
-        "اطلب عرض سعر للكباين والمكاتب والمعسكرات الجاهزة في السعودية. نخدم جدة والرياض والدمام والمشاريع الحكومية بسرعة واستجابة عالية.",
+        "اطلب عرض سعر لكبائن برتا أو مكاتب مواقع أو معسكرات عمال في السعودية مع دعم كامل للتسليم والتشغيل.",
     },
-    serviceDetails: {
-      "porta-cabin": {
-        title: "كبائن متنقلة في السعودية | تسليم سريع من ابن العرب",
-        description:
-          "كبائن متينة للمواقع والمكاتب والسكن، مصممة للحرارة ومطابقة للمعايير السعودية مع تسليم سريع وتنفيذ احترافي.",
-      },
-      "portable-site-offices": {
-        title: "مكاتب متنقلة للمشاريع في السعودية | جاهزة ومكيفة",
-        description:
-          "مكاتب موقع متنقلة آمنة ومكيفة بترتيبات مرنة وتخزين ذكي، تركيب سريع في جدة وكافة مدن المملكة.",
-      },
-      "portable-labor-camps": {
-        title: "معسكرات عمال متنقلة في السعودية | حلول متكاملة",
-        description:
-          "معسكرات عمال جاهزة تشمل غرف النوم، المطاعم، وحدات النظافة والتكييف، مصممة للمشاريع البعيدة والمناطق الصناعية في المملكة.",
-      },
-      "portable-mosques": {
-        title: "مساجد متنقلة في السعودية | وحدات صلاة جاهزة للمواقع",
-        description:
-          "مساجد ووحدات صلاة متنقلة مزودة بمرافق وضوء وتكييف وتصاميم معتمدة، تركيب سريع لخدمة مواقع المشاريع.",
-      },
-      "portable-restrooms": {
-        title: "دورات مياه متنقلة في السعودية | حلول صحية للمواقع",
-        description:
-          "وحدات دورات مياه واستحمام متنقلة نظيفة وسهلة الصيانة مع تحكم بالروائح وتركيب سريع لمواقع العمل والفعاليات.",
-      },
-      "portable-warehouse": {
-        title: "مستودعات متنقلة في السعودية | تخزين آمن وقابل للتوسعة",
-        description:
-          "مستودعات وحلول تخزين متنقلة للمناطق الصناعية واللوجستية، أمان عالٍ وقابلية توسعة وتركيب سريع لخدمة المشاريع السعودية.",
-      },
-      "portable-security-units": {
-        title: "كبائن أمن متنقلة في السعودية | غرف حراسة ونقاط تفتيش",
-        description:
-          "كبائن حراسة ونقاط تفتيش جاهزة بتجهيزات أمان، تكييف ورؤية واضحة، تسليم سريع في جدة وكافة مناطق المملكة.",
-      },
-      "portable-canteen": {
-        title: "مطابخ وكافتيريات متنقلة في السعودية | تجهيز كامل",
-        description:
-          "مطابخ وكافتيريات متنقلة مجهزة للمعسكرات والمواقع البعيدة، تهوية صحية وتجهيز سريع لتلبية احتياجات العمال والمشاريع.",
-      },
-    },
+    serviceDetails: buildServiceMeta("ar"),
   },
 };
