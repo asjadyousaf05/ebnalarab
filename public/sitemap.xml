@@ -14,7 +14,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services"/>
     <lastmod>2025-12-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -23,15 +23,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/about-us"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/gallery"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/gallery"/>
     <lastmod>2025-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/contact</loc>
@@ -39,7 +39,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/contact"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/faq</loc>
@@ -47,23 +47,55 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/faq"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.ebnalarab.com/services/portable-cabins</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-cabins"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-cabins"/>
+    <loc>https://www.ebnalarab.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/privacy"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.ebnalarab.com/services/portable-offices</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-offices"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-offices"/>
+    <loc>https://www.ebnalarab.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/terms"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/cookies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/cookies"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/porta-cabin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/porta-cabin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/porta-cabin"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-houses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-houses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-houses"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-site-offices</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-site-offices"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-site-offices"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/services/portable-labor-camps</loc>
@@ -71,7 +103,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-labor-camps"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/services/portable-mosques</loc>
@@ -79,7 +111,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-mosques"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-storage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-storage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-storage"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/services/portable-restrooms</loc>
@@ -87,15 +127,39 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-restrooms"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.ebnalarab.com/services/portable-warehouses</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-warehouses"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-warehouses"/>
+    <loc>https://www.ebnalarab.com/services/portable-warehouse</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-warehouse"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-warehouse"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-log-cabin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-log-cabin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-log-cabin"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-canteen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-canteen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-canteen"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-mobile-containers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-mobile-containers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-mobile-containers"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ebnalarab.com/services/portable-security-units</loc>
@@ -103,14 +167,54 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-security-units"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.ebnalarab.com/services/steel-fabrication</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/steel-fabrication"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/steel-fabrication"/>
+    <loc>https://www.ebnalarab.com/services/portable-pantry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-pantry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-pantry"/>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-bathrooms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-bathrooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-bathrooms"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/portable-security-offices</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/portable-security-offices"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/portable-security-offices"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/aluminum</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/aluminum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/aluminum"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/welding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/welding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/welding"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ebnalarab.com/services/cutting-bending</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ebnalarab.com/services/cutting-bending"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ebnalarab.com/services/cutting-bending"/>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
