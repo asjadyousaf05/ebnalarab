@@ -7,7 +7,7 @@ export const Footer = () => {
   const { locale, dir } = useLocale();
   const t = copy[locale].footer;
   const labels = copy[locale].labels;
-  const serviceLinks = servicesContent[locale];
+  const serviceLinks = servicesContent[locale].filter((service) => !service.parent);
   const socialLinks = [
     { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/ebn-al-arab-3a72b23a1" },
     { name: "Twitter", icon: Twitter, href: "#" },
@@ -75,7 +75,7 @@ export const Footer = () => {
                   href={`/services/${link.slug}`}
                   className="text-primary-foreground/60 hover:text-primary transition-colors duration-200"
                 >
-                  {link.name}
+                  {locale === "en" ? `${link.name} in Saudi Arabia` : link.name}
                 </a>
               ))}
             </div>

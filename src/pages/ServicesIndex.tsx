@@ -13,7 +13,8 @@ import { servicesContent, servicesHubContent } from "@/i18n/servicesContent";
 const ServicesIndex = () => {
   const { locale, dir } = useLocale();
   const t = copy[locale];
-  const services = servicesContent[locale].filter((s) => !s.parent);
+  const allServices = servicesContent[locale];
+  const parentServices = allServices.filter((s) => !s.parent);
   const hub = servicesHubContent[locale];
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
   const location = useLocation();
@@ -102,7 +103,7 @@ const ServicesIndex = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services.map((service, index) => {
+          {parentServices.map((service, index) => {
             const imageAlt =
               service.heroAlt ?? service.cardAlt ?? `${service.name} modular cabin by EBN AL ARAB in Saudi Arabia`;
 
@@ -146,6 +147,36 @@ const ServicesIndex = () => {
               </motion.article>
             );
           })}
+        </div>
+
+        <div className="mt-12 rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
+                Strong internal links to every service page
+              </h2>
+              <p className="text-muted-foreground">
+                Reinforced crawl paths from the services hub to each Saudi Arabia offering.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {allServices.map((service) => (
+              <Link
+                key={service.slug}
+                to={`/services/${service.slug}`}
+                className="rounded-lg border border-border/60 bg-background/70 px-4 py-3 hover:border-primary/60 transition"
+              >
+                <p className="text-xs font-semibold text-primary uppercase tracking-wide">Jeddah & KSA</p>
+                <p className="text-lg font-bold text-foreground">
+                  {locale === "en" ? `${service.name} in Saudi Arabia` : service.name}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Permanent link to the canonical service page for faster indexing.
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

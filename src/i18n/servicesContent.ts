@@ -91,7 +91,7 @@ const withAltText = (services: ServiceContent[]): ServiceContent[] =>
 const servicesEn: ServiceContent[] = [
   {
     slug: "porta-cabin",
-    name: "Porta Cabin",
+    name: "Saudi Porta Cabins & Modular Units",
     intro: "Parent category for modular porta cabins engineered for Saudi climate, logistics, and compliance.",
     description:
       "Steel-frame porta cabins with insulated panels, MEP-ready layouts, and rapid deployment make it easy to stand up offices, housing, security, and welfare facilities anywhere in the Kingdom.",
@@ -174,14 +174,14 @@ const servicesEn: ServiceContent[] = [
       "portable-warehouse",
       "portable-storage",
     ],
-    metaTitle: "Portable Cabins Saudi Arabia | Ebn Al Arab Porta Cabin",
+    metaTitle: "Saudi Porta Cabins & Modular Units | Ebn Al Arab",
     metaDescription:
       "Porta cabins fabricated in Jeddah for Saudi Arabia with insulated panels, AC-ready layouts, sanitary blocks, and turnkey installation for offices, housing, and storage.",
   },
   {
     slug: "portable-houses",
     parent: "porta-cabin",
-    name: "Portable Houses",
+    name: "Portable Houses & Villas KSA",
     intro: "Comfortable modular homes ready to place and connect for staff, families, or VIP accommodation.",
     description:
       "Insulated portable houses combine residential comfort with modular speed. Each unit arrives pre-fitted for AC, plumbing, and finishes suited to Saudi heat and dust.",
@@ -258,14 +258,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-site-offices", "portable-labor-camps", "portable-bathrooms", "portable-pantry"],
-    metaTitle: "Portable Houses KSA | Modular Housing by Ebn Al Arab",
+    metaTitle: "Portable Houses & Villas KSA | Ebn Al Arab Modular Homes",
     metaDescription:
       "Portable houses for Saudi Arabia with insulated walls, AC-ready power, and turnkey kitchens or bathrooms. Fast deployment for staff housing, VIP units, and remote sites.",
   },
   {
     slug: "portable-site-offices",
     parent: "porta-cabin",
-    name: "Portable Site Offices",
+    name: "Site Offices & Command Cabins KSA",
     intro: "Pre-wired, AC-ready offices that let project teams work productively on day one.",
     description:
       "Portable site offices arrive fully insulated with electrical raceways, data points, ergonomic layouts, and secure doors so managers can lead from the heart of the job site.",
@@ -342,14 +342,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-warehouse", "portable-security-units", "portable-pantry", "portable-restrooms"],
-    metaTitle: "Portable Site Offices Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Site Offices & Command Cabins KSA | Ebn Al Arab",
     metaDescription:
       "AC-ready portable site offices for Saudi projects with insulated panels, data raceways, secure glazing, and rapid installation. Tailored layouts for construction and energy teams.",
   },
   {
     slug: "portable-labor-camps",
     parent: "porta-cabin",
-    name: "Portable Labor Camps",
+    name: "Workforce Labor Camp Cabins",
     intro: "Worker accommodation built for comfort, hygiene, and durability on demanding Saudi projects.",
     description:
       "Portable labor camps combine sleeping quarters, dining, welfare, and sanitation into modular blocks that are safe, ventilated, and easy to clean.",
@@ -426,14 +426,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-canteen", "portable-restrooms", "portable-bathrooms", "portable-houses"],
-    metaTitle: "Portable Labor Camps Saudi Arabia | Ebn Al Arab Cabins",
+    metaTitle: "Workforce Labor Camp Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable labor camps for Saudi projects with ventilated sleeping quarters, hygiene blocks, dining cabins, and shaded circulation. Fast installation and HSE-ready layouts.",
   },
   {
     slug: "portable-mosques",
     parent: "porta-cabin",
-    name: "Portable Mosques",
+    name: "Portable Mosques & Prayer Cabins",
     intro: "Prayer cabins with thoughtful ablution-friendly finishes and comfortable layouts.",
     description:
       "Portable mosques provide dedicated prayer space with cleanable surfaces, ventilation, and AC-ready design so crews and visitors can pray comfortably on-site.",
@@ -510,14 +510,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-labor-camps", "portable-restrooms", "portable-security-units"],
-    metaTitle: "Portable Mosques Saudi Arabia | Ebn Al Arab Prayer Cabins",
+    metaTitle: "Portable Mosques & Prayer Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable mosque cabins with ablution-friendly finishes, Qibla orientation, ventilation, and AC-ready design. Fast deployment for Saudi sites and events.",
   },
   {
     slug: "portable-storage",
     parent: "porta-cabin",
-    name: "Portable Storage",
+    name: "Secure Portable Storage Cabins",
     intro: "Secure storage cabins for tools, materials, and sensitive equipment on Saudi sites.",
     description:
       "Portable storage cabins use reinforced frames, lockable doors, and ventilation to protect materials from heat, dust, and theft while remaining easy to relocate.",
@@ -594,14 +594,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-warehouse", "portable-site-offices", "portable-security-units"],
-    metaTitle: "Portable Storage Cabins Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Secure Portable Storage Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Secure portable storage cabins for Saudi job sites with reinforced doors, ventilation, shelving, and quick relocation. Protect tools, materials, and equipment in KSA conditions.",
   },
   {
     slug: "portable-restrooms",
     parent: "porta-cabin",
-    name: "Portable Restrooms",
+    name: "Hygienic Portable Restroom Cabins",
     intro: "Hygienic restroom cabins ready to plumb, ventilate, and use on day one.",
     description:
       "Portable restrooms feature non-slip floors, proper ventilation, and easy-clean finishes to protect worker welfare and site cleanliness.",
@@ -678,14 +678,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-bathrooms", "portable-canteen", "portable-site-offices"],
-    metaTitle: "Portable Restrooms Saudi Arabia | Ebn Al Arab Hygiene Cabins",
+    metaTitle: "Hygienic Portable Restroom Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable restroom cabins with non-slip floors, ventilation, and plumb-ready fixtures for Saudi sites and events. Fast installation with male/female and VIP options.",
   },
   {
     slug: "portable-warehouse",
     parent: "porta-cabin",
-    name: "Portable Warehouse",
+    name: "Modular Portable Warehouses",
     intro: "Modular warehouse space to protect inventory, equipment, and spares on-site.",
     description:
       "Portable warehouses deliver wide-span storage with secure access, ventilation, and heavy-duty flooring so you can stage materials close to operations.",
@@ -762,14 +762,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-storage", "portable-site-offices", "portable-security-units"],
-    metaTitle: "Portable Warehouse Saudi Arabia | Ebn Al Arab Modular Storage",
+    metaTitle: "Modular Portable Warehouses KSA | Ebn Al Arab",
     metaDescription:
       "Portable warehouses with secure access, ventilation, and heavy-duty floors for Saudi projects. Rapid deployment and expansion with racking, lighting, and AC options.",
   },
   {
     slug: "portable-log-cabin",
     parent: "porta-cabin",
-    name: "Portable Log Cabin",
+    name: "Log-Style Portable Cabins Saudi",
     intro: "Aesthetic log-style cabins for hospitality, leisure, and premium site experiences.",
     description:
       "Portable log cabins deliver a warm, hospitality-grade look with insulated walls, cozy interiors, and utility readiness for resorts, cafes, and premium offices.",
@@ -846,14 +846,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-houses", "portable-canteen", "portable-pantry"],
-    metaTitle: "Portable Log Cabin Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Log-Style Portable Cabins Saudi Arabia | Ebn Al Arab",
     metaDescription:
       "Portable log cabins with wood-look facades, insulated structure, and hospitality-ready finishes. Ideal for cafes, guest suites, and premium site offices in Saudi Arabia.",
   },
   {
     slug: "portable-canteen",
     parent: "porta-cabin",
-    name: "Portable Canteen",
+    name: "Canteen & Kitchen Cabins KSA",
     intro: "Food-service ready cabins with hygiene-first layouts for crews and guests.",
     description:
       "Portable canteens arrive with washable surfaces, exhaust routes, serving counters, and utility points so kitchens can start serving immediately.",
@@ -930,14 +930,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-pantry", "portable-restrooms", "portable-labor-camps"],
-    metaTitle: "Portable Canteen Saudi Arabia | Ebn Al Arab Kitchen Cabins",
+    metaTitle: "Canteen & Kitchen Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable canteen cabins with washable finishes, ventilation, serving counters, and utility points. Rapid deployment for workforce dining and event catering in Saudi Arabia.",
   },
   {
     slug: "portable-mobile-containers",
     parent: "porta-cabin",
-    name: "Portable Mobile Containers",
+    name: "Mobile Container Cabins",
     intro: "Container-based cabins modified for offices, housing, storage, or retail uses.",
     description:
       "Modified container cabins keep the strength of steel containers while adding insulation, windows, doors, and interior fit-outs for comfort and security.",
@@ -1014,14 +1014,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-storage", "portable-security-units", "portable-site-offices"],
-    metaTitle: "Portable Container Cabins Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Mobile Container Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable mobile container cabins converted with insulation, glazing, and secure access for offices, housing, or storage. Fast deployment and relocation across Saudi Arabia.",
   },
   {
     slug: "portable-security-units",
     parent: "porta-cabin",
-    name: "Portable Security Units",
+    name: "Security Guard Cabins",
     intro: "Rapid-deploy security cabins for gatehouses, checkpoints, and perimeter control.",
     description:
       "Portable security units combine reinforced doors, panoramic glazing, counters, and equipment space so guards can monitor sites effectively.",
@@ -1098,14 +1098,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-security-offices", "portable-site-offices", "portable-storage"],
-    metaTitle: "Portable Security Cabins Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Security Guard Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable security cabins with reinforced doors, panoramic glazing, counters, and AC-ready design. Rapid deployment for gatehouses and checkpoints across Saudi Arabia.",
   },
   {
     slug: "portable-pantry",
     parent: "porta-cabin",
-    name: "Portable Pantry",
+    name: "Pantry & Servery Cabins",
     intro: "Pantry cabins to support onsite teams with beverages, snacks, and light food prep.",
     description:
       "Portable pantry cabins provide clean counter space, storage, and appliance points to keep crews refreshed without leaving site.",
@@ -1182,14 +1182,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-canteen", "portable-site-offices", "portable-houses"],
-    metaTitle: "Portable Pantry Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Pantry & Servery Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable pantry cabins with easy-clean finishes, appliance power points, and storage. Ideal for offices, camps, and VIP lounges across Saudi Arabia.",
   },
   {
     slug: "portable-bathrooms",
     parent: "porta-cabin",
-    name: "Portable Bathrooms",
+    name: "Shower & Bathroom Cabins",
     intro: "Self-contained bathroom cabins with showers, toilets, and ventilation ready to connect.",
     description:
       "Portable bathroom cabins provide complete bathing facilities with non-slip floors, drainage, and humidity control to support workforce welfare.",
@@ -1266,14 +1266,14 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-restrooms", "portable-canteen", "portable-labor-camps"],
-    metaTitle: "Portable Bathrooms Saudi Arabia | Ebn Al Arab Welfare Cabins",
+    metaTitle: "Shower & Bathroom Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable bathroom cabins with showers, toilets, non-slip finishes, and ventilation. Ready to connect for Saudi welfare facilities, camps, and events.",
   },
   {
     slug: "portable-security-offices",
     parent: "porta-cabin",
-    name: "Portable Security Offices",
+    name: "Security Office Cabins",
     intro: "Larger security offices with workspace for teams, surveillance, and evidence storage.",
     description:
       "Portable security offices combine surveillance space, desks, storage, and reinforced entry to give security teams a professional base on site.",
@@ -1350,13 +1350,13 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["portable-security-units", "portable-site-offices", "portable-storage"],
-    metaTitle: "Portable Security Offices Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Security Office Cabins KSA | Ebn Al Arab",
     metaDescription:
       "Portable security offices with reinforced access, CCTV prep, and workspace for teams. Rapid deployment for control rooms, checkpoints, and incident response in Saudi Arabia.",
   },
   {
     slug: "aluminum",
-    name: "Aluminum",
+    name: "Aluminum Fabrication Workshops",
     intro: "High-precision aluminum fabrication and fit-out for facades, frames, and custom profiles.",
     description:
       "Lightweight, corrosion-resistant aluminum works including facades, doors, windows, louvers, and trims tailored to Saudi projects and climates.",
@@ -1433,13 +1433,13 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["cutting-bending", "welding", "porta-cabin"],
-    metaTitle: "Aluminum Fabrication Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Aluminum Fabrication Workshops KSA | Ebn Al Arab",
     metaDescription:
       "Aluminum facades, doors, windows, louvers, and custom profiles with CNC precision, corrosion-resistant finishes, and fast delivery across Saudi Arabia.",
   },
   {
     slug: "welding",
-    name: "Welding",
+    name: "Industrial Welding & Steel Fabrication",
     intro: "Certified welding for structural, architectural, and industrial applications.",
     description:
       "MIG, TIG, and stick welding by certified welders with QA documentation for steel, aluminum, and specialty alloys used across Saudi projects.",
@@ -1516,13 +1516,13 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["cutting-bending", "aluminum", "porta-cabin"],
-    metaTitle: "Welding Services Saudi Arabia | Ebn Al Arab",
+    metaTitle: "Industrial Welding & Steel Fabrication KSA | Ebn Al Arab",
     metaDescription:
       "Certified MIG, TIG, and stick welding for structural and architectural steel, stainless, and aluminum. QA-backed fabrication and on-site welding across Saudi Arabia.",
   },
   {
     slug: "cutting-bending",
-    name: "Cutting & Bending",
+    name: "CNC Metal Cutting & Bending Saudi Arabia",
     intro: "Precision cutting and press-brake bending services for sheet and plate components.",
     description:
       "CNC laser/plasma cutting and tight-tolerance press-brake bending for components that are ready for assembly or finishing.",
@@ -1599,7 +1599,7 @@ const servicesEn: ServiceContent[] = [
       },
     ],
     relatedSlugs: ["welding", "aluminum", "porta-cabin"],
-    metaTitle: "Cutting & Bending Saudi Arabia | Ebn Al Arab CNC Services",
+    metaTitle: "CNC Metal Cutting & Bending KSA | Ebn Al Arab",
     metaDescription:
       "CNC cutting and press-brake bending for steel and aluminum parts with tight tolerances, clean edges, and QA documentation. Prototypes to production across Saudi Arabia.",
   },

@@ -143,7 +143,7 @@ export const copy: Record<Locale, any> = {
     navbar: {
       brand: "EBN AL ARAB",
       brandHighlight: "",
-      phone: "0506792744",
+      phone: "+966 58 146 0761",
       cta: "Get a Quote",
       navLinks: [
         { name: "Home", href: "/" },
@@ -154,28 +154,28 @@ export const copy: Record<Locale, any> = {
           isDropdown: true,
           categories: [
             {
-              name: "Porta Cabin",
+              name: "Saudi Porta Cabins & Modular Units",
               href: "/services/porta-cabin",
               subServices: [
-                { name: "Portable Houses", href: "/services/portable-houses" },
-                { name: "Portable Site Offices", href: "/services/portable-site-offices" },
-                { name: "Portable Labor Camps", href: "/services/portable-labor-camps" },
-                { name: "Portable Mosques", href: "/services/portable-mosques" },
-                { name: "Portable Storage", href: "/services/portable-storage" },
-                { name: "Portable Restrooms", href: "/services/portable-restrooms" },
-                { name: "Portable Warehouse", href: "/services/portable-warehouse" },
-                { name: "Portable Log Cabin", href: "/services/portable-log-cabin" },
-                { name: "Portable Canteen", href: "/services/portable-canteen" },
-                { name: "Portable Mobile Containers", href: "/services/portable-mobile-containers" },
-                { name: "Portable Security Units", href: "/services/portable-security-units" },
-                { name: "Portable Pantry", href: "/services/portable-pantry" },
-                { name: "Portable Bathrooms", href: "/services/portable-bathrooms" },
-                { name: "Portable Security Offices", href: "/services/portable-security-offices" },
+                { name: "Portable Houses & Villas KSA", href: "/services/portable-houses" },
+                { name: "Site Offices & Command Cabins KSA", href: "/services/portable-site-offices" },
+                { name: "Workforce Labor Camp Cabins", href: "/services/portable-labor-camps" },
+                { name: "Portable Mosques & Prayer Cabins", href: "/services/portable-mosques" },
+                { name: "Secure Portable Storage Cabins", href: "/services/portable-storage" },
+                { name: "Hygienic Portable Restroom Cabins", href: "/services/portable-restrooms" },
+                { name: "Modular Portable Warehouses", href: "/services/portable-warehouse" },
+                { name: "Log-Style Portable Cabins Saudi", href: "/services/portable-log-cabin" },
+                { name: "Canteen & Kitchen Cabins KSA", href: "/services/portable-canteen" },
+                { name: "Mobile Container Cabins", href: "/services/portable-mobile-containers" },
+                { name: "Security Guard Cabins", href: "/services/portable-security-units" },
+                { name: "Pantry & Servery Cabins", href: "/services/portable-pantry" },
+                { name: "Shower & Bathroom Cabins", href: "/services/portable-bathrooms" },
+                { name: "Security Office Cabins", href: "/services/portable-security-offices" },
               ],
             },
-            { name: "Aluminum", href: "/services/aluminum" },
-            { name: "Welding", href: "/services/welding" },
-            { name: "Cutting & Bending", href: "/services/cutting-bending" },
+            { name: "Aluminum Fabrication Workshops", href: "/services/aluminum" },
+            { name: "Industrial Welding & Steel Fabrication", href: "/services/welding" },
+            { name: "CNC Metal Cutting & Bending Saudi Arabia", href: "/services/cutting-bending" },
           ],
         },
         { name: "Gallery", href: "/gallery" },
@@ -234,7 +234,7 @@ labels: {
         {
           id: "welding",
           badge: "Certified fabrication",
-          headline: { before: "Precision", highlight: "Welding", after: "for Steel & Aluminum" },
+          headline: { before: "Precision", highlight: "Industrial Welding & Steel Fabrication", after: "for Steel & Aluminum" },
           description:
             "Structural and industrial welding services for frames, stairs, and accessories that complement your cabin builds.",
           features: ["Certified welders", "Structural fabrication", "Aluminum & steel capability"],
@@ -270,7 +270,7 @@ labels: {
         },
         {
           id: 2,
-          name: "Aluminum",
+          name: "Aluminum Fabrication Workshops",
           description: "Lightweight, corrosion-resistant aluminum fabrication",
           image: aluminium,
           imageAlt: "Aluminum profiles and panels stacked in a workshop",
@@ -279,7 +279,7 @@ labels: {
         },
         {
           id: 3,
-          name: "Welding",
+          name: "Industrial Welding & Steel Fabrication",
           description: "Certified welding for structural and industrial assemblies",
           image: welding,
           imageAlt: "Welder working on a steel frame with sparks",
@@ -288,7 +288,7 @@ labels: {
         },
         {
           id: 4,
-          name: "Cutting & Bending",
+          name: "CNC Metal Cutting & Bending Saudi Arabia",
           description: "CNC cutting and press-brake bending with tight tolerances",
           image: cuttingBending,
           imageAlt: "CNC press brake bending metal sheet in a factory",
@@ -394,7 +394,7 @@ labels: {
         { label: "Phone (RANA NAVEED 1)", value: "0581460761" },
         { label: "Phone (RANA NAVEED 2)", value: "0539382766" },
         { label: "Email", value: "ibnalarab264@gmail.com" },
-        { label: "WhatsApp", value: "+9660506792744" },
+        { label: "WhatsApp", value: "+966581460761" },
         { label: "LinkedIn", value: "www.linkedin.com/in/ebn-al-arab-3a72b23a1" },
       ],
       form: {
@@ -503,10 +503,10 @@ labels: {
       links: {
         products: [
           { name: "Porta Cabins", href: "/services/porta-cabin" },
-          { name: "Portable Site Offices", href: "/services/portable-site-offices" },
-          { name: "Portable Security Units", href: "/services/portable-security-units" },
-          { name: "Portable Labor Camps", href: "/services/portable-labor-camps" },
-          { name: "Portable Restrooms", href: "/services/portable-restrooms" },
+          { name: "Site Offices & Command Cabins KSA", href: "/services/portable-site-offices" },
+          { name: "Security Guard Cabins", href: "/services/portable-security-units" },
+          { name: "Workforce Labor Camp Cabins", href: "/services/portable-labor-camps" },
+          { name: "Hygienic Portable Restroom Cabins", href: "/services/portable-restrooms" },
         ],
         company: [
           { name: "About Us", href: "/about-us" },
@@ -540,7 +540,7 @@ labels: {
     services: addGalleryAlts([
       {
         slug: "porta-cabin",
-        name: "Porta Cabin",
+        name: "Saudi Porta Cabins & Modular Units",
         intro: "Parent category for all portable cabins engineered for rapid deployment.",
         description:
           "From housing to offices and sanitary units, our porta cabins are insulated, durable, and optimized for fast setup across job sites and events.",
@@ -562,7 +562,7 @@ labels: {
       {
         slug: "portable-houses",
         parent: "porta-cabin",
-        name: "Portable Houses",
+        name: "Portable Houses & Villas KSA",
         intro: "Comfortable modular homes ready to place and connect.",
         description:
           "Portable houses with insulated walls, AC-ready design, and flexible room layouts for temporary or semi-permanent living.",
@@ -578,7 +578,7 @@ labels: {
       {
         slug: "portable-site-offices",
         parent: "porta-cabin",
-        name: "Portable Site Offices",
+        name: "Site Offices & Command Cabins KSA",
         intro: "Pre-wired, AC-ready offices to get teams productive fast.",
         description:
           "Site offices arrive with insulation, wiring, and ergonomic layouts to serve as command centers from day one.",
@@ -594,7 +594,7 @@ labels: {
       {
         slug: "portable-labor-camps",
         parent: "porta-cabin",
-        name: "Portable Labor Camps",
+        name: "Workforce Labor Camp Cabins",
         intro: "Worker housing optimized for comfort and durability.",
         description:
           "Ventilated, insulated cabins with safe flooring and configurable bunk or room layouts for workforce accommodation.",
@@ -610,7 +610,7 @@ labels: {
       {
         slug: "portable-mosques",
         parent: "porta-cabin",
-        name: "Portable Mosques",
+        name: "Portable Mosques & Prayer Cabins",
         intro: "Prayer cabins with thoughtful layouts and finishes.",
         description:
           "Portable mosque units with ablution-friendly flooring, ventilation, and dedicated prayer space ready to deploy.",
@@ -626,7 +626,7 @@ labels: {
       {
         slug: "portable-storage",
         parent: "porta-cabin",
-        name: "Portable Storage",
+        name: "Secure Portable Storage Cabins",
         intro: "Secure storage cabins for tools and materials.",
         description:
           "Steel-reinforced storage cabins with secure doors, ventilation, and moisture-aware design for sensitive materials.",
@@ -642,7 +642,7 @@ labels: {
       {
         slug: "portable-restrooms",
         parent: "porta-cabin",
-        name: "Portable Restrooms",
+        name: "Hygienic Portable Restroom Cabins",
         intro: "Hygienic restroom cabins ready to plumb and use.",
         description:
           "Portable restroom units with non-slip floors, ventilation, and easy-clean surfaces for worker welfare.",
@@ -658,7 +658,7 @@ labels: {
       {
         slug: "portable-warehouse",
         parent: "porta-cabin",
-        name: "Portable Warehouse",
+        name: "Modular Portable Warehouses",
         intro: "Modular warehouse space for on-site inventory.",
         description:
           "Large-span portable warehouse cabins with secure access, ventilation, and rugged flooring for equipment and stock.",
@@ -674,7 +674,7 @@ labels: {
       {
         slug: "portable-log-cabin",
         parent: "porta-cabin",
-        name: "Portable Log Cabin",
+        name: "Log-Style Portable Cabins Saudi",
         intro: "Aesthetic log-style cabins for hospitality or leisure.",
         description:
           "Log-look cabins with insulated walls, cozy interiors, and utility readiness for hospitality or site comfort.",
@@ -690,7 +690,7 @@ labels: {
       {
         slug: "portable-canteen",
         parent: "porta-cabin",
-        name: "Portable Canteen",
+        name: "Canteen & Kitchen Cabins KSA",
         intro: "Canteen cabins with hygiene-first layouts.",
         description:
           "Food-service ready cabins with washable surfaces, ventilation, serving counters, and utility connection points.",
@@ -706,7 +706,7 @@ labels: {
       {
         slug: "portable-mobile-containers",
         parent: "porta-cabin",
-        name: "Portable Mobile Containers",
+        name: "Mobile Container Cabins",
         intro: "Container-based cabins for flexible uses.",
         description:
           "Modified container cabins with insulation, windows, and doors tailored to office, housing, or storage use.",
@@ -722,7 +722,7 @@ labels: {
       {
         slug: "portable-security-units",
         parent: "porta-cabin",
-        name: "Portable Security Units",
+        name: "Security Guard Cabins",
         intro: "Rapid-deploy security units for gatehouses.",
         description:
           "Compact security cabins with reinforced doors, panoramic glazing, and space for monitoring equipment.",
@@ -738,7 +738,7 @@ labels: {
       {
         slug: "portable-pantry",
         parent: "porta-cabin",
-        name: "Portable Pantry",
+        name: "Pantry & Servery Cabins",
         intro: "Pantry cabins to support onsite teams.",
         description:
           "Portable pantry units with washable finishes, counter space, and utility points for appliances.",
@@ -754,7 +754,7 @@ labels: {
       {
         slug: "portable-bathrooms",
         parent: "porta-cabin",
-        name: "Portable Bathrooms",
+        name: "Shower & Bathroom Cabins",
         intro: "Self-contained bathroom cabins for sites and events.",
         description:
           "Complete bathroom cabins with showers, toilets, and ventilation, ready to connect to water and waste.",
@@ -770,7 +770,7 @@ labels: {
       {
         slug: "portable-security-offices",
         parent: "porta-cabin",
-        name: "Portable Security Offices",
+        name: "Security Office Cabins",
         intro: "Larger security offices with workspace for teams.",
         description:
           "Security offices combining surveillance space, desks, and storage with reinforced entry and panoramic views.",
@@ -785,7 +785,7 @@ labels: {
       },
       {
         slug: "aluminum",
-        name: "Aluminum",
+        name: "Aluminum Fabrication Workshops",
         intro: "High-precision aluminum fabrication and fit-out.",
         description:
           "Lightweight, corrosion-resistant aluminum works including facades, frames, and custom profiles tailored to your projects.",
@@ -800,7 +800,7 @@ labels: {
       },
       {
         slug: "welding",
-        name: "Welding",
+        name: "Industrial Welding & Steel Fabrication",
         intro: "Certified welding for structural and industrial needs.",
         description:
           "MIG, TIG, and stick welding by certified welders with QA documentation for steel, aluminum, and specialty alloys.",
@@ -815,7 +815,7 @@ labels: {
       },
       {
         slug: "cutting-bending",
-        name: "Cutting & Bending",
+        name: "CNC Metal Cutting & Bending Saudi Arabia",
         intro: "Precision cutting and press-brake bending services.",
         description:
           "CNC laser/plasma cutting and tight-tolerance press-brake bending for sheet and plate components ready for assembly.",
@@ -835,7 +835,7 @@ labels: {
     navbar: {
       brand: "ابن العرب",
       brandHighlight: "",
-      phone: "0506792744",
+      phone: "+966 58 146 0761",
       cta: "اطلب عرض سعر",
       navLinks: [
         { name: "الرئيسية", href: "/" },
@@ -1085,7 +1085,7 @@ labels: {
         { label: "الهاتف (رنا نويد 1)", value: "0581460761" },
         { label: "الهاتف (رنا نويد 2)", value: "0539382766" },
         { label: "البريد الإلكتروني", value: "ibnalarab264@gmail.com" },
-        { label: "واتساب", value: "+9660506792744" },
+        { label: "واتساب", value: "+966581460761" },
         { label: "لينكد إن", value: "www.linkedin.com/in/ebn-al-arab-3a72b23a1" },
       ],
       form: {

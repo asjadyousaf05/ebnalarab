@@ -24,27 +24,27 @@ const buildServiceMeta = (locale: Locale): Record<string, MetaEntry> =>
 export const pageMeta: Record<Locale, PageMeta> = {
   en: {
     home: {
-      title: "Ebn Al Arab Porta Cabins & Modular Buildings Saudi Arabia",
+      title: "Ebn Al Arab Porta Cabins Saudi Arabia",
       description:
-        "Portable cabins, porta cabins, prefab offices, and modular compounds built in Saudi Arabia with fast delivery for government, industrial, and commercial projects.",
+        "Porta cabins, prefab offices, and modular compounds built in Saudi Arabia with fast delivery for government, industrial, and commercial projects.",
     },
     about: {
-      title: "About Ebn Al Arab | Porta Cabins & Prefab Buildings Saudi",
+      title: "About Ebn Al Arab | Porta Cabins Saudi",
       description:
         "Saudi manufacturer of porta cabins, prefab buildings, and modular solutions delivering fast, compliant projects for contractors, government, and industry.",
     },
     services: {
-      title: "Portable Cabins & Porta Cabin Solutions Saudi Arabia | Ebn Al Arab",
+      title: "Portable Cabins & Modular Buildings KSA | Ebn Al Arab",
       description:
         "Porta cabins, site offices, labor camps, restrooms, kitchens, warehouses, and security cabins built in Saudi Arabia with fast delivery and bilingual support.",
     },
     gallery: {
-      title: "Project Gallery | Portable Cabins & Prefab Buildings KSA",
+      title: "Project Gallery | Porta Cabins & Modular KSA",
       description:
         "View completed portable cabins, prefab buildings, and modular projects across Saudi Arabia, including Jeddah, Riyadh, NEOM, and oil & gas sites.",
     },
     contact: {
-      title: "Contact Ebn Al Arab | Porta Cabins & Modular Buildings KSA",
+      title: "Contact Ebn Al Arab | Porta Cabins KSA",
       description:
         "Request a quote for porta cabins, site offices, labor camps, or warehouses in Saudi Arabia. Serving Jeddah, Riyadh, Dammam, NEOM, and remote sites.",
     },

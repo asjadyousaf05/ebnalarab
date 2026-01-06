@@ -15,18 +15,18 @@ export const FloatingSocial = () => {
         {open && (
           <>
             <a
-              href="tel:0506792744"
-              aria-label="Call 0506792744"
+              href="tel:+966581460761"
+              aria-label="Call +966 58 146 0761"
               className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 transition"
-              onClick={() => trackContactClick("tel:0506792744", "0506792744")}
+              onClick={() => trackContactClick("tel:+966581460761", "+966 58 146 0761")}
             >
               <PhoneCall className="w-6 h-6" />
             </a>
             <a
-              href="https://wa.me/9660506792744"
+              href="https://wa.me/966581460761"
               aria-label={labels.whatsapp}
               className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white shadow-lg shadow-green-500/30 hover:bg-green-600 transition"
-              onClick={() => trackContactClick("https://wa.me/9660506792744", "+9660506792744")}
+              onClick={() => trackContactClick("https://wa.me/966581460761", "+966581460761")}
             >
               <MessageCircle className="w-6 h-6" />
             </a>

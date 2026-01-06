@@ -51,6 +51,10 @@ const ServicePage = () => {
       : service
         ? meta.serviceDetails[service.slug]
         : undefined;
+  const internalLinks: { label: string; href: string }[] = [];
+  if (parent) internalLinks.push({ label: parent.name, href: `/services/${parent.slug}` });
+  children.forEach((child) => internalLinks.push({ label: child.name, href: `/services/${child.slug}` }));
+  relatedServices.forEach((rel) => internalLinks.push({ label: rel?.name ?? "", href: `/services/${rel?.slug}` }));
 
   useEffect(() => {
     if (!service) return;
@@ -104,8 +108,8 @@ const ServicePage = () => {
     );
   }
 
-  const waLink = `https://wa.me/9660506792744?text=${encodeURIComponent(service.whatsappMessage)}`;
-  const trackWa = () => trackContactClick(waLink, "+9660506792744");
+  const waLink = `https://wa.me/966581460761?text=${encodeURIComponent(service.whatsappMessage)}`;
+  const trackWa = () => trackContactClick(waLink, "+966581460761");
 
   return (
     <div dir={dir}>
@@ -178,6 +182,30 @@ const ServicePage = () => {
             <h2 className="text-2xl font-bold text-foreground">{service.name}</h2>
             <p className="text-muted-foreground leading-relaxed">{service.description}</p>
 
+            {internalLinks.length > 0 && (
+              <div className="rounded-xl border border-border/60 bg-card p-4 space-y-2">
+                <h3 className="text-lg font-semibold text-foreground">
+                  {locale === "ar" ? "روابط داخلية سريعة" : "Quick internal links in Saudi Arabia"}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {locale === "ar"
+                    ? "تساعد هذه الروابط جوجل على الزحف لكل خدمة مرتبطة."
+                    : "These links help Google crawl every related service page across Saudi Arabia."}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {internalLinks.slice(0, 8).map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="text-primary text-sm font-semibold underline underline-offset-4 hover:text-primary/80"
+                    >
+                      {locale === "en" ? `${link.label} in Saudi Arabia` : link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid sm:grid-cols-2 gap-4">
               {service.highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4">
@@ -237,6 +265,51 @@ const ServicePage = () => {
                 ))}
               </div>
             ))}
+
+            <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4">
+              <h2 className="text-2xl font-semibold text-foreground">
+                {locale === "ar" ? "لماذا تختار ابن العرب" : "Why choose Ebn Al Arab"}
+              </h2>
+              <ul className="space-y-2">
+                {[
+                  locale === "ar"
+                    ? "تصنيع محلي في جدة مع تسليم سريع داخل المملكة."
+                    : "Local fabrication in Jeddah with fast delivery across KSA.",
+                  locale === "ar"
+                    ? "تصاميم مكيفة لحرارة السعودية مع عزل وأعمال كهرباء جاهزة."
+                    : "Saudi-climate-ready insulation, power, and AC sizing.",
+                  locale === "ar"
+                    ? "فِرق تركيب وصيانة متاحة لإعادة التمركز والتوسعات."
+                    : "Install and maintenance teams available for relocations and expansions.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4">
+              <h2 className="text-2xl font-semibold text-foreground">
+                {locale === "ar" ? "المواصفات الفنية المختصرة" : "Technical specs at a glance"}
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  locale === "ar" ? "ألواح ساندوتش عزل حراري" : "Insulated sandwich panels",
+                  locale === "ar" ? "إطارات فولاذية مدعمة" : "Reinforced steel framing",
+                  locale === "ar" ? "أسلاك وكهرباء جاهزة للمكيفات" : "Prewired and AC-ready power",
+                  locale === "ar" ? "أرضيات مقاومة للانزلاق" : "Slip-resistant flooring options",
+                  locale === "ar" ? "تجهيزات صحية اختيارية" : "Optional sanitary/kitchen fit-out",
+                  locale === "ar" ? "تصاريح ورفع ونقل داخل السعودية" : "KSA transport, craning, and permits handled",
+                ].map((spec) => (
+                  <div key={spec} className="flex items-center gap-2 text-muted-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <span className="text-sm">{spec}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="space-y-6">

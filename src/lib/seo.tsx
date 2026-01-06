@@ -15,6 +15,9 @@ type SeoProps = {
 const BASE_URL = "https://www.ebnalarab.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og.jpg`;
 const DEFAULT_LOGO = `${BASE_URL}/logo.png`;
+const SUPPORTED_HREFLANGS = ["en-sa", "ar-sa", "x-default"] as const;
+const ORG_NAME_EN = "EBN AL ARAB | Porta Cabins & Modular Buildings";
+const ORG_NAME_AR = "EBN AL ARAB | Portable Cabins & Modular Buildings";
 
 const setMetaTag = (selector: string, attributes: Record<string, string>) => {
   let tag = document.querySelector(selector) as HTMLMetaElement | null;
@@ -40,7 +43,32 @@ const setLinkTag = (rel: string, href: string, hreflang?: string) => {
     if (hreflang) tag.hreflang = hreflang;
     document.head.appendChild(tag);
   }
-  tag.href = href;
+  tag.setAttribute("href", href);
+};
+
+const dedupeCanonical = () => {
+  const canonicals = Array.from(document.querySelectorAll('link[rel="canonical"]'));
+  canonicals.forEach((node, idx) => {
+    if (idx > 0) node.remove();
+  });
+};
+
+const pruneAlternateTags = () => {
+  const allowed = new Set(SUPPORTED_HREFLANGS);
+  const alternates = Array.from(document.querySelectorAll('link[rel="alternate"][hreflang]')) as HTMLLinkElement[];
+  alternates.forEach((link) => {
+    if (!allowed.has(link.hreflang as (typeof SUPPORTED_HREFLANGS)[number])) {
+      link.remove();
+    }
+  });
+  SUPPORTED_HREFLANGS.forEach((hrefLang) => {
+    const duplicates = Array.from(
+      document.querySelectorAll(`link[rel="alternate"][hreflang="${hrefLang}"]`)
+    ) as HTMLLinkElement[];
+    duplicates.forEach((dup, idx) => {
+      if (idx > 0) dup.remove();
+    });
+  });
 };
 
 export const Seo = ({
@@ -56,29 +84,30 @@ export const Seo = ({
     if (typeof document === "undefined") return;
 
     const cleanPath = path.split("?")[0] || "/";
-    const canonical =
-      lang === "ar" ? `${BASE_URL}${cleanPath}?lang=ar` : `${BASE_URL}${cleanPath}`;
-    const enHref = `${BASE_URL}${cleanPath}?lang=en`;
-    const arHref = `${BASE_URL}${cleanPath}?lang=ar`;
-    const locale = lang === "ar" ? "ar-SA" : "en-US";
-    const orgName =
-      lang === "ar"
-        ? "ابن العرب – الكبائن الجاهزة والمباني المعيارية"
-        : "EBN AL ARAB – Porta Cabins & Modular Buildings";
+    const canonicalBase = `${BASE_URL}${cleanPath}`;
+    const canonicalHref = canonicalBase;
+    const alternateEn = canonicalBase;
+    const alternateAr = canonicalBase;
+    const locale = lang === "ar" ? "ar-SA" : "en-SA";
+    const orgName = lang === "ar" ? ORG_NAME_AR : ORG_NAME_EN;
 
     document.title = title;
     setMetaTag('meta[name="description"]', { name: "description", content: description });
     setMetaTag('meta[name="robots"]', { name: "robots", content: robots });
-    setLinkTag("canonical", canonical);
-    setLinkTag("alternate", enHref, "en");
-    setLinkTag("alternate", arHref, "ar");
-    setLinkTag("alternate", enHref, "x-default");
+
+    dedupeCanonical();
+    setLinkTag("canonical", canonicalHref);
+    pruneAlternateTags();
+    setLinkTag("alternate", alternateEn, "en-sa");
+    setLinkTag("alternate", alternateAr, "ar-sa");
+    setLinkTag("alternate", alternateEn, "x-default");
+    pruneAlternateTags();
 
     setMetaTag('meta[property="og:type"]', { property: "og:type", content: "website" });
     setMetaTag('meta[property="og:site_name"]', { property: "og:site_name", content: orgName });
     setMetaTag('meta[property="og:title"]', { property: "og:title", content: title });
     setMetaTag('meta[property="og:description"]', { property: "og:description", content: description });
-    setMetaTag('meta[property="og:url"]', { property: "og:url", content: canonical });
+    setMetaTag('meta[property="og:url"]', { property: "og:url", content: canonicalHref });
     setMetaTag('meta[property="og:image"]', { property: "og:image", content: ogImage });
     setMetaTag('meta[property="og:locale"]', { property: "og:locale", content: locale });
 
@@ -120,7 +149,7 @@ export const Seo = ({
       name: orgName,
       url: BASE_URL,
       image: DEFAULT_OG_IMAGE,
-      telephone: "+9660506792744",
+      telephone: "+966581460761",
       address: {
         "@type": "PostalAddress",
         addressCountry: "SA",
@@ -135,7 +164,7 @@ export const Seo = ({
       "@context": "https://schema.org",
       "@type": "WebSite",
       url: BASE_URL,
-      name: "EBN AL ARAB",
+      name: ORG_NAME_EN,
       inLanguage: locale,
       potentialAction: {
         "@type": "SearchAction",

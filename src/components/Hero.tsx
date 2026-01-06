@@ -58,6 +58,8 @@ export const Hero = () => {
           alt={slide.alt ?? `${slide.headline.highlight} by EBN AL ARAB porta cabin experts in Saudi Arabia`}
           className="w-full h-full object-cover transition-all duration-700 ease-in-out"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 hero-overlay" />
         {/* Gradient Overlay */}
