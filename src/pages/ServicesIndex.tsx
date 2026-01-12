@@ -44,55 +44,6 @@ const ServicesIndex = () => {
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: hub.intro }} />
         </div>
 
-        <div className="space-y-10 max-w-5xl mx-auto mb-12">
-          {hub.sections.map((section) => (
-            <div
-              key={section.heading}
-              className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4"
-            >
-              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">{section.heading}</h2>
-              {section.body.map((paragraph, idx) => (
-                <p
-                  key={idx}
-                  className="text-muted-foreground leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
-                />
-              ))}
-              {section.bullets && (
-                <ul className="grid sm:grid-cols-2 gap-3 pt-2">
-                  {section.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-start gap-2 text-foreground"
-                      dangerouslySetInnerHTML={{ __html: bullet }}
-                    />
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4 mb-12">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
-            {locale === "ar" ? "الأسئلة الشائعة عن الخدمات" : "Service FAQs"}
-          </h2>
-          <div className="space-y-3">
-            {hub.faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group rounded-xl border border-border/60 bg-background/60 p-4 transition"
-              >
-                <summary className="flex items-center justify-between gap-2 cursor-pointer text-foreground font-semibold">
-                  {faq.question}
-                  <ArrowRight className="w-4 h-4 text-primary transition-transform group-open:rotate-90" />
-                </summary>
-                <p className="text-muted-foreground mt-2 leading-relaxed">{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
             {t.servicesIntro.title}
@@ -147,6 +98,55 @@ const ServicesIndex = () => {
               </motion.article>
             );
           })}
+        </div>
+
+        <div className="space-y-10 max-w-5xl mx-auto mt-12 mb-12">
+          {hub.sections.map((section) => (
+            <div
+              key={section.heading}
+              className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4"
+            >
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">{section.heading}</h2>
+              {section.body.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
+              {section.bullets && (
+                <ul className="grid sm:grid-cols-2 gap-3 pt-2">
+                  {section.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-start gap-2 text-foreground"
+                      dangerouslySetInnerHTML={{ __html: bullet }}
+                    />
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4 mb-12">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
+            {locale === "ar" ? "الأسئلة الشائعة عن الخدمات" : "Service FAQs"}
+          </h2>
+          <div className="space-y-3">
+            {hub.faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-xl border border-border/60 bg-background/60 p-4 transition"
+              >
+                <summary className="flex items-center justify-between gap-2 cursor-pointer text-foreground font-semibold">
+                  {faq.question}
+                  <ArrowRight className="w-4 h-4 text-primary transition-transform group-open:rotate-90" />
+                </summary>
+                <p className="text-muted-foreground mt-2 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4">

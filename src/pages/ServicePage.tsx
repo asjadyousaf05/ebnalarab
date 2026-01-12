@@ -180,6 +180,32 @@ const ServicePage = () => {
         <div className="container-custom grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-2xl font-bold text-foreground">{service.name}</h2>
+            {children.length > 0 && (
+              <div className="mt-8 space-y-3">
+                <h3 className="text-xl font-semibold text-foreground">{t.servicesIntro.title}</h3>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {children.map((child) => (
+                    <Link
+                      key={child.slug}
+                      to={`/services/${child.slug}`}
+                      className="flex items-center justify-between px-4 py-3 rounded-lg border border-border/60 bg-card hover:border-primary/40 hover:shadow-sm transition"
+                    >
+                      <span className="text-foreground font-semibold">{child.name}</span>
+                      <ArrowRight className="w-4 h-4 text-primary" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {service.highlights.map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
+                  <p className="text-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+
             <p className="text-muted-foreground leading-relaxed">{service.description}</p>
 
             {internalLinks.length > 0 && (
@@ -206,32 +232,6 @@ const ServicePage = () => {
               </div>
             )}
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              {service.highlights.map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
-                  <p className="text-foreground">{item}</p>
-                </div>
-              ))}
-            </div>
-
-            {children.length > 0 && (
-              <div className="mt-8 space-y-3">
-                <h3 className="text-xl font-semibold text-foreground">{t.servicesIntro.title}</h3>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {children.map((child) => (
-                    <Link
-                      key={child.slug}
-                      to={`/services/${child.slug}`}
-                      className="flex items-center justify-between px-4 py-3 rounded-lg border border-border/60 bg-card hover:border-primary/40 hover:shadow-sm transition"
-                    >
-                      <span className="text-foreground font-semibold">{child.name}</span>
-                      <ArrowRight className="w-4 h-4 text-primary" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           <div className="space-y-4">
@@ -243,6 +243,36 @@ const ServicePage = () => {
             >
               <Phone className="w-5 h-5" /> {t.servicesIntro.whatsappLabel}
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <h3 className="text-2xl font-bold text-foreground mb-6">{t.products.title}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {service.gallery.map((img, idx) => {
+              const alt = service.galleryAlts?.[idx] ?? `${service.name} modular cabin view ${idx + 1} by EBN AL ARAB`;
+
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setSelectedImage({ src: img, alt })}
+                  className="block rounded-2xl overflow-hidden border border-border/60 bg-card shadow-soft group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  aria-label={alt}
+                >
+                  <img
+                    src={img}
+                    alt={alt}
+                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                  />
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -356,36 +386,6 @@ const ServicePage = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <h3 className="text-2xl font-bold text-foreground mb-6">{t.products.title}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.gallery.map((img, idx) => {
-              const alt = service.galleryAlts?.[idx] ?? `${service.name} modular cabin view ${idx + 1} by EBN AL ARAB`;
-
-              return (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setSelectedImage({ src: img, alt })}
-                  className="block rounded-2xl overflow-hidden border border-border/60 bg-card shadow-soft group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  aria-label={alt}
-                >
-                  <img
-                    src={img}
-                    alt={alt}
-                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                    fetchPriority="low"
-                  />
-                </button>
-              );
-            })}
           </div>
         </div>
       </section>
