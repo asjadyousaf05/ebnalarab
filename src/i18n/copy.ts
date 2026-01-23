@@ -13,6 +13,9 @@ import portacabin12 from "@/assets/portacabin12.webp";
 import portacabin13 from "@/assets/portacabin13.webp";
 import portacabin14 from "@/assets/portacabin14.webp";
 import portacabin15 from "@/assets/portacabin15.webp";
+import portacabin16 from "@/assets/portacabin16.webp";
+import portacabin17 from "@/assets/portacabin17.webp";
+import portavid1 from "@/assets/portavid1.mp4";
 import aluminium from "@/assets/aluminium.webp";
 import welding from "@/assets/welding.webp";
 import cuttingBending from "@/assets/cuttingBending.webp";
@@ -67,6 +70,9 @@ const imageAltMap: Record<string, string> = {
   [portacabin13]: "Stackable portable cabins prepared on steel foundations for deployment",
   [portacabin14]: "Blue-accent modular cabin elevated on concrete blocks at a job site",
   [portacabin15]: "Kiosk-style portable cabin with sliding service window and steps",
+  [portacabin16]: "Modern portable cabin with sleek design and integrated lighting",
+  [portacabin17]: "Compact portable cabin with reinforced structure and ventilation",
+  [portavid1]: "Video showcasing porta cabins in action",
   [aluminium]: "Aluminum profiles and panels stacked in a workshop",
   [welding]: "Welder working on a steel frame with bright sparks",
   [cuttingBending]: "CNC press brake bending metal sheet in a factory",
@@ -76,7 +82,7 @@ const imageAltMap: Record<string, string> = {
 
 const getImageAlt = (image: string, fallback: string) => imageAltMap[image] ?? fallback;
 
-const extraCabinImages = [portacabin10, portacabin11, portacabin12, portacabin13, portacabin14, portacabin15];
+const extraCabinImages = [portacabin10, portacabin11, portacabin12, portacabin13, portacabin14, portacabin15, portacabin16, portacabin17];
 
 const hashString = (value: string) =>
   value.split("").reduce((acc, char, idx) => acc + char.charCodeAt(0) * (idx + 1), 0);

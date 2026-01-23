@@ -35,22 +35,9 @@ const ServicesIndex = () => {
       />
       <div className="container-custom">
         <div className="text-center mb-12">
-          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
-            {hub.eyebrow}
-          </span>
           <h1 id="services-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             {hub.h1}
           </h1>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: hub.intro }} />
-        </div>
-
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            {t.servicesIntro.title}
-          </h2>
-          <p className="text-muted-foreground max-w-3xl">
-            {t.servicesIntro.description}
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -83,10 +70,9 @@ const ServicesIndex = () => {
                   />
                 </button>
                 <div className="p-6 space-y-3">
-                  <h2 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <h2 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {service.name}
                   </h2>
-                  <p className="text-muted-foreground leading-relaxed">{service.intro}</p>
                   <Link
                     to={`/services/${service.slug}`}
                     className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300"
@@ -100,84 +86,11 @@ const ServicesIndex = () => {
           })}
         </div>
 
-        <div className="space-y-10 max-w-5xl mx-auto mt-12 mb-12">
-          {hub.sections.map((section) => (
-            <div
-              key={section.heading}
-              className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4"
-            >
-              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">{section.heading}</h2>
-              {section.body.map((paragraph, idx) => (
-                <p
-                  key={idx}
-                  className="text-muted-foreground leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
-                />
-              ))}
-              {section.bullets && (
-                <ul className="grid sm:grid-cols-2 gap-3 pt-2">
-                  {section.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-start gap-2 text-foreground"
-                      dangerouslySetInnerHTML={{ __html: bullet }}
-                    />
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
 
-        <div className="rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4 mb-12">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
-            {locale === "ar" ? "الأسئلة الشائعة عن الخدمات" : "Service FAQs"}
-          </h2>
-          <div className="space-y-3">
-            {hub.faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group rounded-xl border border-border/60 bg-background/60 p-4 transition"
-              >
-                <summary className="flex items-center justify-between gap-2 cursor-pointer text-foreground font-semibold">
-                  {faq.question}
-                  <ArrowRight className="w-4 h-4 text-primary transition-transform group-open:rotate-90" />
-                </summary>
-                <p className="text-muted-foreground mt-2 leading-relaxed">{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
 
-        <div className="mt-12 rounded-2xl border border-border/60 bg-card shadow-soft p-6 sm:p-8 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
-                Strong internal links to every service page
-              </h2>
-              <p className="text-muted-foreground">
-                Reinforced crawl paths from the services hub to each Saudi Arabia offering.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {allServices.map((service) => (
-              <Link
-                key={service.slug}
-                to={`/services/${service.slug}`}
-                className="rounded-lg border border-border/60 bg-background/70 px-4 py-3 hover:border-primary/60 transition"
-              >
-                <p className="text-xs font-semibold text-primary uppercase tracking-wide">Jeddah & KSA</p>
-                <p className="text-lg font-bold text-foreground">
-                  {locale === "en" ? `${service.name} in Saudi Arabia` : service.name}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Permanent link to the canonical service page for faster indexing.
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
+
+
+
       </div>
 
       <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>

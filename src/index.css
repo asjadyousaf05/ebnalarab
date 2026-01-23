@@ -151,6 +151,13 @@
     font-family: 'Outfit', system-ui, sans-serif;
   }
 
+  /* Add padding for mobile banner */
+  @media (max-width: 1023px) {
+    body {
+      padding-top: 2.5rem; /* 40px - height of mobile banner */
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', system-ui, sans-serif;
     @apply font-semibold tracking-tight;

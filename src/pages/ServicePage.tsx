@@ -181,19 +181,34 @@ const ServicePage = () => {
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-2xl font-bold text-foreground">{service.name}</h2>
             {children.length > 0 && (
-              <div className="mt-8 space-y-3">
-                <h3 className="text-xl font-semibold text-foreground">{t.servicesIntro.title}</h3>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {children.map((child) => (
-                    <Link
-                      key={child.slug}
-                      to={`/services/${child.slug}`}
-                      className="flex items-center justify-between px-4 py-3 rounded-lg border border-border/60 bg-card hover:border-primary/40 hover:shadow-sm transition"
-                    >
-                      <span className="text-foreground font-semibold">{child.name}</span>
-                      <ArrowRight className="w-4 h-4 text-primary" />
-                    </Link>
-                  ))}
+              <div className="mt-8 space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">{t.servicesIntro.title}</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {children.map((child) => {
+                    const imageAlt = child.heroAlt ?? child.cardAlt ?? `${child.name} by EBN AL ARAB`;
+                    return (
+                      <Link
+                        key={child.slug}
+                        to={`/services/${child.slug}`}
+                        className="group rounded-2xl border border-border/60 bg-card shadow-soft overflow-hidden hover:shadow-lg transition-all duration-300"
+                      >
+                        <div className="aspect-video overflow-hidden">
+                          <img
+                            src={child.gallery[0]}
+                            alt={imageAlt}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors flex items-center justify-between">
+                            {child.name}
+                            <ArrowRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </h4>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}

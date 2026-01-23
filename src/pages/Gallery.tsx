@@ -72,15 +72,28 @@ const Gallery = () => {
                   onClick={() => setSelected({ src: image, alt: altText, title: name })}
                   aria-label={altText}
                 >
-                  <div className="aspect-[4/3]">
-                    <img
-                      src={image}
-                      alt={altText}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      fetchPriority="low"
-                    />
+                  <div className="aspect-[4/3] relative">
+                    {image.endsWith('.mp4') ? (
+                      <video
+                        src={image}
+                        className="w-full h-full object-cover"
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        onMouseEnter={(e) => e.currentTarget.play()}
+                        onMouseLeave={(e) => e.currentTarget.pause()}
+                      />
+                    ) : (
+                      <img
+                        src={image}
+                        alt={altText}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                      />
+                    )}
                   </div>
                   <figcaption className="p-4 space-y-1">
                     <p className="text-lg font-semibold text-foreground">{name}</p>
