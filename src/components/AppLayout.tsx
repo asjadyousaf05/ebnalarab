@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingSocial } from "@/components/FloatingSocial";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { useLocale } from "@/context/LocaleContext";
 
 export const AppLayout = () => {
@@ -14,6 +15,7 @@ export const AppLayout = () => {
         <Outlet />
       </main>
       <FloatingSocial />
+      <FloatingWhatsApp />
       <Footer />
     </div>
   );

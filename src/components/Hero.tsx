@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Play, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { copy } from "@/i18n/copy";
 import { useLocale } from "@/context/LocaleContext";
+import { trackContactClick } from "@/lib/analytics";
+
 
 export const Hero = () => {
   const { locale, dir } = useLocale();
@@ -61,89 +63,93 @@ export const Hero = () => {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 hero-overlay" />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-dark/95 via-slate-dark/80 to-transparent" />
+        {/* Very light overlay only on left side where text is */}
+        <div className="absolute inset-y-0 left-0 w-full lg:w-2/5 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
       </div>
 
+
       {/* Content */}
-      <div className="container-custom relative z-10 py-32 lg:py-40" role="presentation">
-        <div className="max-w-3xl">
+      <div className="container-custom relative z-10 py-20 lg:py-28" role="presentation">
+        <div className="max-w-md lg:max-w-xl">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4"
             role="status"
             aria-live="polite"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-soft" />
-            <span className="text-primary-foreground/90 text-sm font-medium">{slide.badge}</span>
+            <span className="text-primary-foreground/90 text-xs font-medium">{slide.badge}</span>
           </motion.div>
 
-          {/* Heading */}
+          {/* Heading - Reduced size */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-4"
           >
             {slide.headline.before} <span className="gradient-text">{slide.headline.highlight}</span> {slide.headline.after}
           </motion.h1>
 
-          {/* Subheading */}
+          {/* Subheading - Reduced size and max-width */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-primary-foreground/70 mb-8 leading-relaxed max-w-2xl"
+            className="text-base sm:text-lg text-primary-foreground/70 mb-6 leading-relaxed max-w-lg"
           >
             {slide.description}
           </motion.p>
 
-          {/* Features */}
+          {/* Features - Show only first 3 in a compact layout */}
           <motion.ul
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row flex-wrap gap-4 mb-10"
+            className="flex flex-wrap gap-3 mb-6"
           >
-            {slide.features.map((feature) => (
+            {slide.features.slice(0, 3).map((feature) => (
               <li
                 key={feature}
-                className="flex items-center gap-2 text-primary-foreground/80"
+                className="flex items-center gap-1.5 text-primary-foreground/80"
               >
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm font-medium">{feature}</span>
+                <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-xs font-medium">{feature}</span>
               </li>
             ))}
           </motion.ul>
 
-          {/* CTAs */}
+          {/* CTAs - Slightly smaller */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3"
           >
             <a
               href={slide.ctaHref ?? "/services"}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
             >
               {t.hero.ctaPrimary}
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href={slide.secondaryHref ?? slide.ctaHref ?? "/services"}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-primary/60 text-primary-foreground font-semibold hover:bg-primary/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+              href="https://wa.me/966581460761"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 shadow-lg hover:shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500/60"
+              onClick={() => trackContactClick("https://wa.me/966581460761", "+966581460761")}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Play className="w-5 h-5" />
+              <Phone className="w-4 h-4" />
               {t.hero.ctaSecondary}
             </a>
           </motion.div>
         </div>
       </div>
+
 
       {/* Slider controls */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-4 md:px-8 lg:px-12 z-10">

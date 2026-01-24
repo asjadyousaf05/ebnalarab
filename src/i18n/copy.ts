@@ -3,7 +3,7 @@ import portacabin2 from "@/assets/portacabin2.webp";
 import portacabin3 from "@/assets/portacabin3.webp";
 import portacabin4 from "@/assets/portacabin4.webp";
 import portacabin5 from "@/assets/portacabin5.webp";
-import portacabin6 from "@/assets/portacabin6.webp";      
+import portacabin6 from "@/assets/portacabin6.webp";
 import portacabin7 from "@/assets/portacabin7.webp";
 import portacabin8 from "@/assets/portacabin8.webp";
 import portacabin9 from "@/assets/portacabin9.webp";
@@ -126,11 +126,11 @@ const addGalleryAlts = (services: Service[]) =>
     const hasFullAlts = service.galleryAlts?.length && service.galleryAlts.length >= service.gallery.length;
     const galleryAlts = hasFullAlts
       ? [
-          ...service.galleryAlts,
-          ...extras.map((img, idx) =>
-            getImageAlt(img, `${service.name} by ${BRAND_NAME} - image ${service.gallery.length + idx + 1}`)
-          ),
-        ]
+        ...service.galleryAlts,
+        ...extras.map((img, idx) =>
+          getImageAlt(img, `${service.name} by ${BRAND_NAME} - image ${service.gallery.length + idx + 1}`)
+        ),
+      ]
       : galleryWithExtras.map((img, idx) => getImageAlt(img, `${service.name} by ${BRAND_NAME} - image ${idx + 1}`));
 
     return {
@@ -160,35 +160,35 @@ export const copy: Record<Locale, any> = {
           isDropdown: true,
           categories: [
             {
-              name: "Saudi Porta Cabins & Modular Units",
+              name: "Porta Cabins & Modular Units",
               href: "/services/porta-cabin",
               subServices: [
-                { name: "Portable Houses & Villas KSA", href: "/services/portable-houses" },
-                { name: "Site Offices & Command Cabins KSA", href: "/services/portable-site-offices" },
-                { name: "Workforce Labor Camp Cabins", href: "/services/portable-labor-camps" },
-                { name: "Portable Mosques & Prayer Cabins", href: "/services/portable-mosques" },
-                { name: "Secure Portable Storage Cabins", href: "/services/portable-storage" },
-                { name: "Hygienic Portable Restroom Cabins", href: "/services/portable-restrooms" },
-                { name: "Modular Portable Warehouses", href: "/services/portable-warehouse" },
-                { name: "Log-Style Portable Cabins Saudi", href: "/services/portable-log-cabin" },
-                { name: "Canteen & Kitchen Cabins KSA", href: "/services/portable-canteen" },
-                { name: "Mobile Container Cabins", href: "/services/portable-mobile-containers" },
-                { name: "Security Guard Cabins", href: "/services/portable-security-units" },
-                { name: "Pantry & Servery Cabins", href: "/services/portable-pantry" },
-                { name: "Shower & Bathroom Cabins", href: "/services/portable-bathrooms" },
-                { name: "Security Office Cabins", href: "/services/portable-security-offices" },
+                { name: "Portable Houses & Villas", href: "/services/portable-houses" },
+                { name: "Portable Site Offices", href: "/services/portable-site-offices" },
+                { name: "Portable Labor Camps", href: "/services/portable-labor-camps" },
+                { name: "Portable Prayer Rooms", href: "/services/portable-mosques" },
+                { name: "Portable Storage Units", href: "/services/portable-storage" },
+                { name: "Portable Restrooms", href: "/services/portable-restrooms" },
+                { name: "Portable Warehouses", href: "/services/portable-warehouse" },
+                { name: "Portable Log Cabins", href: "/services/portable-log-cabin" },
+                { name: "Portable Canteen & Kitchen", href: "/services/portable-canteen" },
+                { name: "Portable Container Cabins", href: "/services/portable-mobile-containers" },
+                { name: "Portable Security Guards", href: "/services/portable-security-units" },
+                { name: "Portable Pantry Units", href: "/services/portable-pantry" },
+                { name: "Portable Bathrooms", href: "/services/portable-bathrooms" },
+                { name: "Portable Security Offices", href: "/services/portable-security-offices" },
               ],
             },
-            { name: "Aluminum Fabrication Workshops", href: "/services/aluminum" },
-            { name: "Industrial Welding & Steel Fabrication", href: "/services/welding" },
-            { name: "CNC Metal Cutting & Bending Saudi Arabia", href: "/services/cutting-bending" },
+            { name: "Aluminum Works", href: "/services/aluminum" },
+            { name: "Welding & Steel", href: "/services/welding" },
+            { name: "Metal Cutting & Bending", href: "/services/cutting-bending" },
           ],
         },
         { name: "Gallery", href: "/gallery" },
         { name: "Contact", href: "/contact" },
       ],
     },
-labels: {
+    labels: {
       heroSection: "Hero section",
       previousSlide: "Previous slide",
       nextSlide: "Next slide",
@@ -250,7 +250,7 @@ labels: {
         },
       ]),
       ctaPrimary: "Browse Cabins",
-      ctaSecondary: "See Install Timeline",
+      ctaSecondary: "Contact Now",
     },
     stats: [
       { value: "20+", label: "Years Building Cabins" },
@@ -276,7 +276,7 @@ labels: {
         },
         {
           id: 2,
-          name: "Aluminum Fabrication Workshops",
+          name: "Aluminum Works",
           description: "Lightweight, corrosion-resistant aluminum fabrication",
           image: aluminium,
           imageAlt: "Aluminum profiles and panels stacked in a workshop",
@@ -285,7 +285,7 @@ labels: {
         },
         {
           id: 3,
-          name: "Industrial Welding & Steel Fabrication",
+          name: "Welding & Steel",
           description: "Certified welding for structural and industrial assemblies",
           image: welding,
           imageAlt: "Welder working on a steel frame with sparks",
@@ -294,7 +294,7 @@ labels: {
         },
         {
           id: 4,
-          name: "CNC Metal Cutting & Bending Saudi Arabia",
+          name: "Metal Cutting & Bending",
           description: "CNC cutting and press-brake bending with tight tolerances",
           image: cuttingBending,
           imageAlt: "CNC press brake bending metal sheet in a factory",
@@ -415,11 +415,11 @@ labels: {
         placeholders: {
           name: "John Doe",
           email: "john@company.com",
-        company: "Your Company",
-        message: "Tell us about your project requirements...",
+          company: "Your Company",
+          message: "Tell us about your project requirements...",
+        },
       },
     },
-  },
     about: {
       metaTitle: "About EBN AL ARAB | Porta Cabins & Industrial Services",
       metaDescription:
@@ -556,7 +556,7 @@ labels: {
           "Custom layouts for any use-case",
           "Fast delivery and crane-ready install",
         ],
-        gallery: [portacabin1, portacabin2, portacabin3 , portacabin8 , portacabin9 , portacabin7],
+        gallery: [portacabin1, portacabin2, portacabin3, portacabin8, portacabin9, portacabin7],
         heroAlt: "Primary porta cabin hero showcasing multiple units",
         galleryAlts: [
           "Porta cabin exterior with branded finish",
@@ -578,7 +578,7 @@ labels: {
           "Configurable bedrooms and living areas",
           "Durable flooring and finishes",
         ],
-        gallery: [portacabin1, portacabin2, portacabin3  , portacabin9],
+        gallery: [portacabin1, portacabin2, portacabin3, portacabin9],
         whatsappMessage: "Hi, I’m interested in portable houses.",
       },
       {
@@ -610,7 +610,7 @@ labels: {
           "Flexible bunk/room partitions",
           "Electrical and lighting included",
         ],
-        gallery: [portacabin2, portacabin1, portacabin3 , portacabin9],
+        gallery: [portacabin2, portacabin1, portacabin3, portacabin9],
         whatsappMessage: "Hi, I’m interested in portable labor camp cabins.",
       },
       {
@@ -658,7 +658,7 @@ labels: {
           "Non-slip hygienic flooring",
           "Service access panels",
         ],
-        gallery: [portacabin4, portacabin2, portacabin3 , portacabin1],
+        gallery: [portacabin4, portacabin2, portacabin3, portacabin1],
         whatsappMessage: "Hi, I’m interested in portable restrooms.",
       },
       {
@@ -674,7 +674,7 @@ labels: {
           "Ventilation for heat control",
           "Heavy-duty flooring",
         ],
-        gallery: [portacabin7, portacabin4, portacabin3 , portacabin1],
+        gallery: [portacabin7, portacabin4, portacabin3, portacabin1],
         whatsappMessage: "Hi, I’m interested in portable warehouse cabins.",
       },
       {
@@ -706,7 +706,7 @@ labels: {
           "Serving counter options",
           "Utility connection points",
         ],
-        gallery: [portacabin2, portacabin3, portacabin4 , portacabin3 , portacabin1],
+        gallery: [portacabin2, portacabin3, portacabin4, portacabin3, portacabin1],
         whatsappMessage: "Hi, I’m interested in portable canteen cabins.",
       },
       {
@@ -816,7 +816,7 @@ labels: {
           "Structural-grade joints",
           "Inspection and reporting",
         ],
-        gallery: [welding  ,portacabin4, portacabin1, portacabin2],
+        gallery: [welding, portacabin4, portacabin1, portacabin2],
         whatsappMessage: "Hi, I’m interested in welding services.",
       },
       {
@@ -831,7 +831,7 @@ labels: {
           "Clean edges for finishing",
           "Prototype to production volumes",
         ],
-        gallery: [ cuttingBending , portacabin2, portacabin3, portacabin4],
+        gallery: [cuttingBending, portacabin2, portacabin3, portacabin4],
         whatsappMessage: "Hi, I’m interested in cutting and bending services.",
       },
     ]),
@@ -942,7 +942,7 @@ labels: {
         },
       ]),
       ctaPrimary: "تصفح الكبائن",
-      ctaSecondary: "شاهد زمن التركيب",
+      ctaSecondary: "اتصل الآن",
     },
     stats: [
       { value: "20+", label: "سنة في بناء الكبائن" },
@@ -1106,11 +1106,11 @@ labels: {
         placeholders: {
           name: "أحمد محمد",
           email: "ahmed@company.com",
-        company: "اسم شركتك",
-        message: "أخبرنا عن متطلبات مشروعك...",
+          company: "اسم شركتك",
+          message: "أخبرنا عن متطلبات مشروعك...",
+        },
       },
     },
-  },
     about: {
       metaTitle: "عن ابن العرب | كبائن متنقلة وخدمات صناعية",
       metaDescription:
@@ -1480,7 +1480,7 @@ labels: {
           "وصلات إنشائية بجودة عالية",
           "تقارير فحص وجودة",
         ],
-        gallery: [welding ,portacabin4, portacabin1, portacabin2],
+        gallery: [welding, portacabin4, portacabin1, portacabin2],
         whatsappMessage: "مرحبًا، أود الاستفسار عن خدمات اللحام.",
       },
       {
@@ -1495,7 +1495,7 @@ labels: {
           "حواف نظيفة للتشطيب",
           "أحجام من النماذج حتى الإنتاج",
         ],
-        gallery: [cuttingBending , portacabin2, portacabin3, portacabin4],
+        gallery: [cuttingBending, portacabin2, portacabin3, portacabin4],
         whatsappMessage: "مرحبًا، أود الاستفسار عن خدمات القص والثني.",
       },
     ]),

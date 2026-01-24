@@ -99,25 +99,25 @@ export const Navbar = () => {
   return (
     <>
       {/* Mobile-only top phone banner */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-[51] bg-primary text-primary-foreground py-2 px-4 shadow-md">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-[51] bg-gradient-to-r from-primary to-primary/90 text-primary-foreground py-2.5 px-4 shadow-md">
         <a
           href={`tel:${t.navbar.phone.replace(/[^+\d]/g, "")}`}
-          className="flex items-center justify-center gap-2 text-sm font-semibold"
+          className="flex items-center justify-center gap-2 text-sm font-bold"
           aria-label={`Call ${t.navbar.phone}`}
           onClick={() =>
             trackContactClick(`tel:${t.navbar.phone.replace(/[^+\d]/g, "")}`, t.navbar.phone)
           }
         >
-          <Phone size={16} aria-hidden="true" className="animate-pulse" />
-          <span>{t.navbar.phone}</span>
+          <Phone size={18} aria-hidden="true" className="animate-pulse" />
+          <span>Call Now</span>
         </a>
       </div>
 
       <header
         dir={dir}
         className={`fixed lg:top-0 top-10 left-0 right-0 z-50 transition-all duration-300 py-[5px] ${isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50"
-            : "bg-background/80 backdrop-blur-sm"
+          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50"
+          : "bg-background/80 backdrop-blur-sm"
           }`}
       >
         <nav
@@ -154,8 +154,8 @@ export const Navbar = () => {
                       <a
                         href={link.href}
                         className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${activeDropdown === link.name
-                            ? "text-primary bg-primary/10"
-                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          ? "text-primary bg-primary/10"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                           }`}
                         aria-haspopup="true"
                         aria-expanded={activeDropdown === link.name}
@@ -185,8 +185,8 @@ export const Navbar = () => {
                                 <a
                                   href={category.href}
                                   className={`flex items-center justify-between px-4 py-2.5 text-sm font-medium transition-all duration-200 mx-2 rounded-lg ${activeSubmenu === category.name
-                                      ? "bg-primary/10 text-primary"
-                                      : "text-foreground hover:bg-muted/60 hover:text-primary"
+                                    ? "bg-primary/10 text-primary"
+                                    : "text-foreground hover:bg-muted/60 hover:text-primary"
                                     }`}
                                   role="menuitem"
                                 >
@@ -248,14 +248,14 @@ export const Navbar = () => {
             </button>
             <a
               href={`tel:${t.navbar.phone.replace(/[^+\d]/g, "")}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-primary to-primary/90 text-primary-foreground font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
               aria-label={`Call ${t.navbar.phone}`}
               onClick={() =>
                 trackContactClick(`tel:${t.navbar.phone.replace(/[^+\d]/g, "")}`, t.navbar.phone)
               }
             >
-              <Phone size={16} aria-hidden="true" />
-              <span>{t.navbar.phone}</span>
+              <Phone size={18} aria-hidden="true" className="animate-pulse" />
+              <span>Call Now</span>
             </a>
           </div>
           <div className="flex items-center gap-2 lg:hidden">
@@ -287,8 +287,8 @@ export const Navbar = () => {
           >
             <div className="absolute inset-0 bg-background/90 backdrop-blur-sm" onClick={closeMobileMenu} aria-hidden="true" />
 
-            <div className="absolute top-0 left-0 right-0 h-[50vh] w-full">
-              <aside className="flex h-full w-full flex-col bg-white shadow-2xl">
+            <div className="absolute top-0 left-0 right-0 h-screen w-full">
+              <aside className="flex h-screen w-full flex-col bg-white shadow-2xl">
                 {/* Top contact + social */}
                 <div className="px-5 py-2.5 flex items-center justify-between border-b border-border/60">
                   <div className="text-sm font-semibold text-primary flex items-center gap-1">
